@@ -2,7 +2,7 @@
 title: "Matriz de Leslie"
 institute: "9833 - BASES DA MATEMÁTICA E ESTATÍSTICA PARA CIÊNCIAS DO MAR"
 author: 	"Fabio Cop Ferreira e William Remo Pedroso Conti"
-image: "imagens/comprimento_angulo.png"
+image: "imagens/matriz_leslie.png"
 format: html
 page-layout: full
 ---
