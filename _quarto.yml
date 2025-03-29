@@ -1,0 +1,25 @@
+project:
+  type: website
+
+format:
+  revealjs:
+    theme: [serif, custom.scss]
+    slide-number: true
+    toc: false
+
+website:
+  title: "BASES DA MATEMÁTICA E ESTATÍSTICA PARA CIÊNCIAS DO MAR - Apresentações"
+  # Navbar configuration
+  navbar:
+    background: "#285c34"
+    search: true
+    logo: "imagens/BMEC-Mar-icon.png"
+    right: # Content on the right https://github.com/FCopf/MEADhe navbar
+       - icon: github
+         href: https://github.com/FCopf/MEAD
+         text: "GitHub"
+
+# Configura projeto para ser executado apenas localmente
+execute:
+  freeze: auto
+

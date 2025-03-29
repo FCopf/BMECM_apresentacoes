@@ -1,0 +1,38 @@
+---
+title: 9833 - BASES DA MATEMÁTICA E ESTATÍSTICA PARA CIÊNCIAS DO MAR - Bict Mar - Unifesp
+subtitle: "Apresentações"
+slug: home
+format:
+  html:
+    number-sections: false
+
+listing:
+  contents:
+    - geometria_vetores.qmd
+    - comprimento_angulo.qmd
+    - sistema_equacoes_lineares.qmd
+    - matrizes.qmd
+    - mmq.qmd
+  sort: false
+  type: grid
+  fields:
+    - title
+    - image
+  categories: false
+---
+
+
+<!-- ---
+title: "Página Inicial"
+format: html
+---
+
+# Bem-vindo!
+
+Escolha uma das apresentações no menu acima ou clique diretamente nos links abaixo:
+
+- [Geometria e Vetores](geometria_vetores.qmd)
+- [Comprimento e Ângulo](comprimento_angulo.qmd)
+- [Sistema de Equações Lineares](sistema_equacoes_lineares.qmd)
+- [Matrizes](matrizes.qmd)
+- [MMQ](mmq.qmd) -->
