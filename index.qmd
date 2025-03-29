@@ -1,6 +1,9 @@
 ---
 title: 9833 - BASES DA MATEMÁTICA E ESTATÍSTICA PARA CIÊNCIAS DO MAR - Bict Mar - Unifesp
 subtitle: "Apresentações"
+author:   
+  - Fabio Cop  
+  - William Remo Pedroso Conti
 slug: home
 format:
   html:
