@@ -13,6 +13,7 @@ listing:
     - sistema_equacoes_lineares.qmd
     - matrizes.qmd
     - mmq.qmd
+    - matriz_leslie.qmd
   sort: false
   type: grid
   fields:
