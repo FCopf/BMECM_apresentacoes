@@ -8,7 +8,7 @@ format:
     toc: false
 
 website:
-  title: "BASES DA MATEMÁTICA E ESTATÍSTICA PARA CIÊNCIAS DO MAR - Apresentações"
+  title: "BASES DA MATEMÁTICA E ESTATÍSTICA PARA CIÊNCIAS DO MAR"
   # Navbar configuration
   navbar:
     background: "#285c34"
