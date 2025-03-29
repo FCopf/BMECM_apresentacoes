@@ -1,10 +1,437 @@
 [
   {
+    "objectID": "mmq.html#conteúdo-da-aula",
+    "href": "mmq.html#conteúdo-da-aula",
+    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
+    "section": "Conteúdo da Aula",
+    "text": "Conteúdo da Aula\n\nIntrodução à Regressão Linear Simples\nDefinição dos Resíduos\nMétodo dos Mínimos Quadrados\nRepresentação Vetorial dos Resíduos\nGeometria da Solução de Mínimos Quadrados\nSolução Matricial do Método dos Mínimos Quadrados"
+  },
+  {
+    "objectID": "mmq.html#introdução-à-regressão-linear-simples",
+    "href": "mmq.html#introdução-à-regressão-linear-simples",
+    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
+    "section": "Introdução à Regressão Linear Simples",
+    "text": "Introdução à Regressão Linear Simples\nA regressão linear simples é um método para modelar a relação entre uma variável dependente \\(y\\) e uma variável independente \\(x\\). A equação da reta ajustada é dada por:\n\\[ y = \\beta_0 + \\beta_1 x \\]\n\n\n\n\n\n\nObservação\n\\(x_i\\)\n\\(y_i\\)\n\n\n\n\n\\(1\\)\n\\(x_1\\)\n\\(y_1\\)\n\n\n\\(2\\)\n\\(x_2\\)\n\\(y_2\\)\n\n\n\\(3\\)\n\\(x_3\\)\n\\(y_3\\)\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\\(n\\)\n\\(x_n\\)\n\\(y_n\\)"
+  },
+  {
+    "objectID": "mmq.html#definição-dos-resíduos",
+    "href": "mmq.html#definição-dos-resíduos",
+    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
+    "section": "Definição dos Resíduos",
+    "text": "Definição dos Resíduos\nNa figura abaixo, os resíduos \\(e_i\\) representam as diferenças entre os valores observados \\(y_i\\) e os valores ajustados \\(\\hat{y}_i\\) pela reta de regressão:\n\\[ e_i = y_i - (\\beta_0 + \\beta_1 x_i) \\]\nPortando na regressão linear, assume-se que o valor ajustado em \\(y\\) é dado por:\n\\[ \\hat{y} = \\beta_0 + \\beta_1 x + e\\]\n\n\n\n\n\n\nObservação\n\\(x_i\\)\n\\(y_i\\)\n\n\n\n\n\\(1\\)\n\\(x_1\\)\n\\(y_1\\)\n\n\n\\(2\\)\n\\(x_2\\)\n\\(y_2\\)\n\n\n\\(3\\)\n\\(x_3\\)\n\\(y_3\\)\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\\(n\\)\n\\(x_n\\)\n\\(y_n\\)"
+  },
+  {
+    "objectID": "mmq.html#método-dos-mínimos-quadrados",
+    "href": "mmq.html#método-dos-mínimos-quadrados",
+    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
+    "section": "Método dos Mínimos Quadrados",
+    "text": "Método dos Mínimos Quadrados\nO Método dos Mínimos Quadrados busca minimizar a soma dos quadrados dos resíduos:\n\\[ SQ_{res} = \\sum_{i=1}^{n} e_i^2 = e_1^2 + e_2^2 + \\cdots + e_n^2 \\]\nQue pode ser representada como:\n\\[\n\\begin{cases}\ne_1 = y_1 - (\\beta_0 + \\beta_1 x_1) \\\\\ne_2 = y_2 - (\\beta_0 + \\beta_1 x_2) \\\\\n\\vdots \\\\\ne_n = y_n - (\\beta_0 + \\beta_1 x_n) \\\\\n\\end{cases}\n\\]"
+  },
+  {
+    "objectID": "mmq.html#representação-vetorial-dos-resíduos",
+    "href": "mmq.html#representação-vetorial-dos-resíduos",
+    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
+    "section": "Representação Vetorial dos Resíduos",
+    "text": "Representação Vetorial dos Resíduos\n\\[\n\\left[ \\begin{array}{c}\ne_1 \\\\\ne_2 \\\\\n\\vdots \\\\\ne_n \\\\\n\\end{array} \\right]\n=\n\\left[ \\begin{array}{c}\ny_1 - (\\beta_0 + \\beta_1 x_1) \\\\\ny_2 - (\\beta_0 + \\beta_1 x_2) \\\\\n\\vdots \\\\\ny_n - (\\beta_0 + \\beta_1 x_n) \\\\\n\\end{array} \\right]\n=\n\\left[ \\begin{array}{c}\ny_1 \\\\\ny_2 \\\\\n\\vdots \\\\\ny_n\n\\end{array} \\right]\n-\n\\left(\n\\beta_0\n\\left[ \\begin{array}{c}\n1 \\\\\n1 \\\\\n\\vdots \\\\\n1 \\\\\n\\end{array} \\right]\n+\n\\beta_1\n\\left[ \\begin{array}{c}\nx_1 \\\\\nx_2 \\\\\n\\vdots \\\\\nx_n \\\\\n\\end{array} \\right]\n\\right)\n\\]\n\nDefinimos os vetores:\n\\[\\vec{e} =\n\\left[ \\begin{array}{c}\ne_1 \\\\\ne_2 \\\\\n\\vdots \\\\\ne_n \\\\\n\\end{array} \\right];\n\\vec{y} =\n\\left[ \\begin{array}{c}\ny_1 \\\\\ny_2 \\\\\n\\vdots \\\\\ny_n \\\\\n\\end{array} \\right];\n\\vec{f}_0 =\n\\left[ \\begin{array}{c}\n1 \\\\\n1 \\\\\n\\vdots \\\\\n1 \\\\\n\\end{array} \\right];\n\\vec{f}_1 =\n\\left[ \\begin{array}{c}\nx_1 \\\\\nx_2 \\\\\n\\vdots \\\\\nx_n \\\\\n\\end{array} \\right]\\]"
+  },
+  {
+    "objectID": "mmq.html#representação-vetorial-dos-resíduos-1",
+    "href": "mmq.html#representação-vetorial-dos-resíduos-1",
+    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
+    "section": "Representação Vetorial dos Resíduos",
+    "text": "Representação Vetorial dos Resíduos\nPodemos portanto representar os resíduos como vetore em que o vetor \\(\\vec{e}\\) é igual ao vetor \\(y\\) menos uma combinação linear dos vetores \\(\\vec{f}_0\\) e \\(\\vec{f}_0\\) com constantes \\(\\beta_0\\) e \\(\\beta_1\\), onde:\n\\[ \\vec{e} = \\vec{y} - (\\beta_0 \\vec{f}_0 + \\beta_1 \\vec{f}_1) \\]"
+  },
+  {
+    "objectID": "mmq.html#geometria-da-solução-de-mínimos-quadrados",
+    "href": "mmq.html#geometria-da-solução-de-mínimos-quadrados",
+    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
+    "section": "Geometria da Solução de Mínimos Quadrados",
+    "text": "Geometria da Solução de Mínimos Quadrados\nA norma ao quadrado do vetor \\(\\vec{e} =\n\\left[ \\begin{array}{c}\ne_1 \\\\\ne_2 \\\\\n\\vdots \\\\\ne_n \\\\\n\\end{array} \\right]\\) é calculada por\n\\[\\Vert\\vec{e}\\Vert^{2}=\\vec{e}\\cdot\\vec{e}=e_{1}^{2}+e_{2}^{2}+\\cdots+e_{n}^{2}\\]\n\n\n\n\n\n\n\nRepresentação da Solução do MMQ no GeoGebra\n\n\nO Método dos Mínimos Quadrados determina \\(\\beta_0\\) e \\(\\beta_1\\) de modo a minimizar o comprimento (a norma) do vetor \\(\\vec{e}\\) que pode ser obtida impondo que o vetor \\(\\vec{e}\\) seja ortogonal aos vetores \\(\\vec{f_0}\\) e \\(\\vec{f_1}\\), ou seja:\n\\[ \\vec{f_0} \\cdot \\vec{e} = 0 \\] \\[ \\vec{f_1} \\cdot \\vec{e} = 0 \\]\nhttps://www.geogebra.org/calculator/eyk8ammw"
+  },
+  {
+    "objectID": "mmq.html#geometria-da-solução-de-mínimos-quadrados-1",
+    "href": "mmq.html#geometria-da-solução-de-mínimos-quadrados-1",
+    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
+    "section": "Geometria da Solução de Mínimos Quadrados",
+    "text": "Geometria da Solução de Mínimos Quadrados\n\\[\n\\left\\{\\begin{array} {c}\n\\vec{f_0} \\cdot \\vec{e} = 0 \\Leftrightarrow \\vec{f_0}\\cdot(\\vec{y}-\\beta_0\\vec{f_0}-\\beta_1\\vec{f_1})=0\\\\\n\\vec{f_1} \\cdot \\vec{e} = 0 \\Leftrightarrow \\vec{f_1}\\cdot(\\vec{y}-\\beta_0\\vec{f_0}-\\beta_1\\vec{f_1})=0\n\\end{array} \\right.\n\\] que é equivalente a: \\[\n\\left\\{\\begin{array} {c}\n\\beta_0\\vec{f_0}\\cdot\\vec{f_0}+\\beta_1\\vec{f_0}\\cdot\\vec{f_1}=\\vec{f_0}\\cdot\\vec{y}\\\\\n\\beta_0\\vec{f_1}\\cdot\\vec{f_0}+\\beta_1\\vec{f_1}\\cdot\\vec{f_1}=\\vec{f_1}\\cdot\\vec{y}\n\\end{array} \\right.\n,\n\\] que ainda pode ser escrito na forma matricial: \\[\n\\left[ \\begin{array}{cc}\n\\vec{f_0}\\cdot\\vec{f_0} & \\vec{f_0}\\cdot\\vec{f_1}\\\\\n\\vec{f_1}\\cdot\\vec{f_0} & \\vec{f_1}\\cdot\\vec{f_1}\n\\end{array} \\right]\n\\left[ \\begin{array}{c}\n\\beta_0\\\\\n\\beta_1\n\\end{array} \\right]\n=\n\\left[ \\begin{array}{c}\n\\vec{f_0}\\cdot\\vec{y}\\\\\n\\vec{f_1}\\cdot\\vec{y}\n\\end{array} \\right]\n\\]"
+  },
+  {
+    "objectID": "mmq.html#solução-matricial-do-método-dos-mínimos-quadrados",
+    "href": "mmq.html#solução-matricial-do-método-dos-mínimos-quadrados",
+    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
+    "section": "Solução Matricial do Método dos Mínimos Quadrados",
+    "text": "Solução Matricial do Método dos Mínimos Quadrados\nA combinação linear:\n\\[\n\\left[ \\begin{array}{cc}\n\\vec{f_0}\\cdot\\vec{f_0} & \\vec{f_0}\\cdot\\vec{f_1}\\\\\n\\vec{f_1}\\cdot\\vec{f_0} & \\vec{f_1}\\cdot\\vec{f_1}\n\\end{array} \\right]\n\\left[ \\begin{array}{c}\n\\beta_0\\\\\n\\beta_1\n\\end{array} \\right]\n=\n\\left[ \\begin{array}{c}\n\\vec{f_0}\\cdot\\vec{y}\\\\\n\\vec{f_1}\\cdot\\vec{y}\n\\end{array} \\right]\n\\]\npor ser expressa pelas matrizes:\n\\[X = \\left[ \\begin{array}{ccc}\n\\vec{f_0} & \\vdots & \\vec{f_1}\n\\end{array} \\right] =\n\\left[ \\begin{array}{cc}\n1 & x_1 \\\\\n1 & x_2 \\\\\n\\vdots & \\vdots \\\\\n1 & x_n \\\\\n\\end{array} \\right];\nY = \\left[ \\begin{array}{c}\ny_1 \\\\\ny_2 \\\\\n\\vdots \\\\\ny_n \\\\\n\\end{array} \\right];\nB = \\left[ \\begin{array}{c}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\end{array} \\right]\n\\]\nE finalmente:\n\\[B = (X^{T} X)^{-1}(X^{T}Y)\\]"
+  },
+  {
+    "objectID": "comprimento_angulo.html#conteúdo-da-aula",
+    "href": "comprimento_angulo.html#conteúdo-da-aula",
+    "title": "Comprimento e ângulo: o produto escalar",
+    "section": "Conteúdo da aula",
+    "text": "Conteúdo da aula\n\nO Produto Escalar\nComprimento de um vetor\nVetor unitário:\nDistância\nÂngulo entre dois vetores\nVetores ortogonais"
+  },
+  {
+    "objectID": "comprimento_angulo.html#o-produto-escalar",
+    "href": "comprimento_angulo.html#o-produto-escalar",
+    "title": "Comprimento e ângulo: o produto escalar",
+    "section": "O Produto Escalar",
+    "text": "O Produto Escalar\n\n\n\n\n\n\nDefinição\n\n\nO Produto Escalar (produto interno) é uma operação matemática entre dois vetores em um espaço euclidiano que resulta em um escalar.\n\\[\n\\vec{u} = \\begin{pmatrix}\nu_1 \\\\\nu_2 \\\\\n\\vdots \\\\\nu_n\n\\end{pmatrix};\n\\vec{v} = \\begin{pmatrix}\nv_1 \\\\\nv_2 \\\\\n\\vdots \\\\\nv_n\n\\end{pmatrix}\n\\]\n\\[\\vec{u} \\cdot \\vec{v} = u_1 v_1 + u_2 v_2 + \\ldots + u_n v_n\\]"
+  },
+  {
+    "objectID": "comprimento_angulo.html#o-produto-escalar-1",
+    "href": "comprimento_angulo.html#o-produto-escalar-1",
+    "title": "Comprimento e ângulo: o produto escalar",
+    "section": "O Produto Escalar",
+    "text": "O Produto Escalar\nPropriedades\n\nSejam \\(\\vec{u}\\), \\(\\vec{v}\\) e \\(\\vec{w}\\) vetores em \\(\\mathbb{R}^n\\), e \\(k\\) um escalar. Então:\n\n\n\n\n\n\n\n\n\nPropriedade\nDescrição\n\n\n\n\n1\n\\(\\vec{u} \\cdot \\vec{v} = \\vec{v} \\cdot \\vec{u}\\)\nComutatividade\n\n\n2\n\\(\\vec{u} \\cdot (\\vec{v} + \\vec{w}) = \\vec{u} \\cdot \\vec{v} + \\vec{u} \\cdot \\vec{w}\\)\nDistributividade\n\n\n3\n\\(k(\\vec{u}) \\cdot \\vec{v} = k(\\vec{u} \\cdot \\vec{v})\\)\nDistributividade\n\n\n4\n\\(\\vec{u} \\cdot \\vec{u} \\ge 0\\) e \\(\\vec{u} \\cdot \\vec{u} = 0\\) se e somente se \\(\\vec{u} = 0\\)"
+  },
+  {
+    "objectID": "comprimento_angulo.html#o-produto-escalar-2",
+    "href": "comprimento_angulo.html#o-produto-escalar-2",
+    "title": "Comprimento e ângulo: o produto escalar",
+    "section": "O Produto Escalar",
+    "text": "O Produto Escalar\nExemplo\n\n\\[\n\\vec{u} = \\begin{pmatrix}\n1 \\\\\n2 \\\\\n-3\n\\end{pmatrix};\n\\vec{v} = \\begin{pmatrix}\n-3 \\\\\n5 \\\\\n2\n\\end{pmatrix}\n\\]\n\\[\\vec{u} \\cdot \\vec{v} = 1 \\times (-3) + 2 \\times 5 + (-3) \\times 2 = -3 + 10 - 6 = 1\\]"
+  },
+  {
+    "objectID": "comprimento_angulo.html#comprimento-de-um-vetor",
+    "href": "comprimento_angulo.html#comprimento-de-um-vetor",
+    "title": "Comprimento e ângulo: o produto escalar",
+    "section": "Comprimento de um vetor",
+    "text": "Comprimento de um vetor\n\nO comprimento de um vetor (magnitude ou norma), é uma medida da extensão do vetor no espaço. Para um vetor \\(\\vec{v} = (v_1, v_2, \\ldots, v_n)\\) em um espaço euclidiano n-dimensional, o comprimento é:\n\\[\n\\|\\vec{v}\\| = \\sqrt{\\vec{v} \\cdot \\vec{v}} = \\sqrt{v_1^2 + v_2^2 + \\cdots + v_n^2}\n\\]"
+  },
+  {
+    "objectID": "comprimento_angulo.html#comprimento-de-um-vetor-1",
+    "href": "comprimento_angulo.html#comprimento-de-um-vetor-1",
+    "title": "Comprimento e ângulo: o produto escalar",
+    "section": "Comprimento de um vetor",
+    "text": "Comprimento de um vetor\nPropriedades\n\nSeja \\(\\vec{u}\\) um vetor em \\(\\mathbb{R}^n\\), e \\(k\\) um escalar. Então:\n\n\n\n\nPropriedade\n\n\n\n\n1\n\\(\\|\\vec{u}\\|  = 0\\) se e somente se \\(\\vec{u} = 0\\)\n\n\n2\n\\(\\|k(\\vec{u})\\| = |k| \\|\\vec{u}\\|\\)"
+  },
+  {
+    "objectID": "comprimento_angulo.html#comprimento-de-um-vetor-2",
+    "href": "comprimento_angulo.html#comprimento-de-um-vetor-2",
+    "title": "Comprimento e ângulo: o produto escalar",
+    "section": "Comprimento de um vetor",
+    "text": "Comprimento de um vetor\nExemplo\n\n\\[\n\\vec{u} = \\begin{pmatrix}\n1 \\\\\n2 \\\\\n-3\n\\end{pmatrix};\n\\vec{v} = \\begin{pmatrix}\n-3 \\\\\n5 \\\\\n2\n\\end{pmatrix}\n\\]\n\\(\\|\\vec{u}\\| = \\sqrt{\\vec{u} \\cdot \\vec{u}} = \\sqrt{u_1^2 + u_2^2 + u_3^2}\\) \\(\\|\\vec{u}\\| = \\sqrt{1^2 + 2^2 + (-3)^2} = \\sqrt{1 + 4 + 9} = \\sqrt{14} \\approx 3.742\\)\n\\(\\|\\vec{v}\\| = \\sqrt{\\vec{v} \\cdot \\vec{v}} = \\sqrt{v_1^2 + v_2^2 + v_3^2}\\) \\(\\|\\vec{v}\\| = \\sqrt{(-3)^2 + 5^2 + 2^2} = \\sqrt{9 + 25 + 4} = \\sqrt{38} \\approx 6.164\\)"
+  },
+  {
+    "objectID": "comprimento_angulo.html#vetor-unitário-normalização",
+    "href": "comprimento_angulo.html#vetor-unitário-normalização",
+    "title": "Comprimento e ângulo: o produto escalar",
+    "section": "Vetor unitário: normalização",
+    "text": "Vetor unitário: normalização\n\nUm vetor é um vetor de comprimento 1 é chamado vetor unitário. \\(\\vec{v}\\) é unitário se \\(\\|\\vec{v}|\\ = 1\\)\nNormalização de um vetor\nDado qualquer vetor não nulo \\(\\vec{v}\\), podemos sempre encontrar um vetor unitário de mesmo sentido que \\(\\vec{v}\\) dividindo \\(\\vec{v}\\) por seu próprio comprimento (ou, equivalentemente, multiplicando por \\(\\frac{1}{\\|\\vec{v}\\|}\\)).\nPortanto o vetor \\(\\vec{u}\\) será unitário se:\n\\(\\vec{u} = \\left(\\frac{1}{\\|\\vec{v}\\|}\\right)\\vec{v}\\)\npois:\n\\[\n\\|\\vec{u}\\| = \\left\\|\\left(\\frac{1}{\\|\\vec{v}\\|}\\right)\\vec{v}\\right\\| = \\left| \\frac{1}{\\|\\vec{v}\\|} \\right| \\|\\vec{v}\\| = \\left(\\frac{1}{\\|\\vec{v}\\|}\\right)\\|\\vec{v}\\| = 1\n\\]\n\\(\\vec{u}\\) possui o mesmo sentido que \\(\\vec{v}\\), pois \\(\\frac{1}{\\|\\vec{v}\\|}\\) é um número positivo."
+  },
+  {
+    "objectID": "comprimento_angulo.html#distância",
+    "href": "comprimento_angulo.html#distância",
+    "title": "Comprimento e ângulo: o produto escalar",
+    "section": "Distância",
+    "text": "Distância\n\nA distância (ou distância euclideana) entre dois vetores \\(\\vec{u} = (u_1, u_2, \\ldots, u_n)\\) e \\(\\vec{v} = (v_1, v_2, \\ldots, v_n)\\) é uma medida da separação entre os dois pontos finais desses vetores no espaço n-dimensional, calculada:\n\\[\nd(\\vec{u}, \\vec{v}) = \\|\\vec{u} - \\vec{v}\\| = \\sqrt{(u_1 - v_1)^2 + (u_2 - v_2)^2 + \\cdots + (u_n - v_n)^2}\n\\]"
+  },
+  {
+    "objectID": "comprimento_angulo.html#distância-1",
+    "href": "comprimento_angulo.html#distância-1",
+    "title": "Comprimento e ângulo: o produto escalar",
+    "section": "Distância",
+    "text": "Distância\nExemplo\n\n\\[\n\\vec{u} = \\begin{pmatrix}\n\\sqrt{2} \\\\\n1 \\\\\n-1\n\\end{pmatrix};\n\\vec{v} = \\begin{pmatrix}\n0 \\\\\n2 \\\\\n-2\n\\end{pmatrix}\n\\]\n\\[\nd(\\vec{u}, \\vec{v}) = \\|\\vec{u} - \\vec{v}\\| = \\sqrt{(\\sqrt{2})^2 + (-1)^2 + 1^2} = \\sqrt{4} = 2\n\\]"
+  },
+  {
+    "objectID": "comprimento_angulo.html#ângulo-entre-dois-vetores",
+    "href": "comprimento_angulo.html#ângulo-entre-dois-vetores",
+    "title": "Comprimento e ângulo: o produto escalar",
+    "section": "Ângulo entre dois vetores",
+    "text": "Ângulo entre dois vetores\n\nO Produto escalar pod ser utilizado para determinar o ângulo \\(\\theta\\) entre dois vetores não mulos \\(\\vec{u}\\) e \\(\\vec{v}\\) por meio da expressão.\n\\[\n\\cos(\\theta) = \\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{u}\\|\\|\\vec{v}\\|}\n\\]"
+  },
+  {
+    "objectID": "comprimento_angulo.html#ângulo-entre-dois-vetores-1",
+    "href": "comprimento_angulo.html#ângulo-entre-dois-vetores-1",
+    "title": "Comprimento e ângulo: o produto escalar",
+    "section": "Ângulo entre dois vetores",
+    "text": "Ângulo entre dois vetores\n\n\n\n\n\n\n\nÂngulo e Lei dos Cossenos\n\n\nConsidere a expressão retirada da Lei dos Cossenos: \\[\n\\|\\vec{u} - \\vec{v}\\|^2 = \\|\\vec{u}\\|^2 + \\|\\vec{v}\\|^2 - 2\\|\\vec{u}\\|\\|\\vec{v}\\|\\cos(\\theta)\n\\]\nExpandindo \\(\\|\\vec{u} - \\vec{v}\\|^2\\) e utilizando a definição do produto escalar, podemos escrever:\n\\[\n\\|\\vec{u} - \\vec{v}\\|^2 = (\\vec{u} - \\vec{v}) \\cdot (\\vec{u} - \\vec{v})  = \\vec{u} \\cdot \\vec{u} - 2\\vec{u} \\cdot \\vec{v} + \\vec{v} \\cdot \\vec{v}\n\\]\nComo \\(\\vec{u} \\cdot \\vec{u} = \\|\\vec{u}\\|^2\\) e \\(\\vec{v} \\cdot \\vec{v} = \\|\\vec{v}\\|^2\\), então:\n\\[\n\\|\\vec{u} - \\vec{v}\\|^2 = \\|\\vec{u}\\|^2 + \\|\\vec{v}\\|^2 - 2\\vec{u} \\cdot \\vec{v}\n\\]\nComparando esta expressão com a expressão original da Lei dos Cossenos, temos:\n\\[\n\\|\\vec{u}\\|^2 + \\|\\vec{v}\\|^2 - 2\\|\\vec{u}\\|\\|\\vec{v}\\|\\cos(\\theta) = \\|\\vec{u}\\|^2 + \\|\\vec{v}\\|^2 - 2\\vec{u} \\cdot \\vec{v}\n\\]\nSimplificando, obtemos:\n\\[\n- 2\\|\\vec{u}\\|\\|\\vec{v}\\|\\cos(\\theta) = - 2\\vec{u} \\cdot \\vec{v}\n\\]\nDividindo ambos os lados por \\(-2\\|\\vec{u}\\|\\|\\vec{v}\\|\\):\n\\[\n\\cos(\\theta) = \\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{u}\\|\\|\\vec{v}\\|}\n\\]"
+  },
+  {
+    "objectID": "comprimento_angulo.html#vetores-ortogonais",
+    "href": "comprimento_angulo.html#vetores-ortogonais",
+    "title": "Comprimento e ângulo: o produto escalar",
+    "section": "Vetores ortogonais",
+    "text": "Vetores ortogonais\nDois vetores \\(\\vec{u}\\) e \\(\\vec{v}\\) são ortogonais entre si se \\(\\vec{u} \\cdot \\vec{v} = 0\\). Dois vetores não nulos ortogonais têm ângulo \\(\\theta\\) entre si \\(\\theta = 90^o\\) (\\(\\theta = \\frac{\\pi}{2}\\) radianos)"
+  },
+  {
+    "objectID": "comprimento_angulo.html#vetores-ortogonais-1",
+    "href": "comprimento_angulo.html#vetores-ortogonais-1",
+    "title": "Comprimento e ângulo: o produto escalar",
+    "section": "Vetores ortogonais",
+    "text": "Vetores ortogonais\n\nExemplo: Considere os vetores \\(\\vec{u} = (2, 3)\\) e \\(\\vec{v} = (-3, 2)\\) em \\(\\mathbb{R}^2\\). Para verificar se são ortogonais:\n\nCalcular o produto escalar \\(\\vec{u} \\cdot \\vec{v}\\):\n\n\\[\n\\vec{u} \\cdot \\vec{v} = 2 \\cdot (-3) + 3 \\cdot 2 = -6 + 6 = 0\n\\]\n\nCalcular as normas \\(\\|\\vec{u}\\|\\) e \\(\\|\\vec{v}\\|\\):\n\n\\[\n\\|\\vec{u}\\| = \\sqrt{2^2 + 3^2} = \\sqrt{4 + 9} = \\sqrt{13}\n\\]\n\\[\n\\|\\vec{v}\\| = \\sqrt{(-3)^2 + 2^2} = \\sqrt{9 + 4} = \\sqrt{13}\n\\]\n\nCalcular \\(\\cos(\\theta)\\):\n\n\\[\n\\cos(\\theta) = \\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{u}\\|\\|\\vec{v}\\|} = \\frac{0}{\\sqrt{13} \\cdot \\sqrt{13}} = 0\n\\]\n\nCalcular \\(\\theta\\):\n\n\\[\n\\theta = \\cos^{-1}(0) = \\frac{\\pi}{2}\n\\]"
+  },
+  {
+    "objectID": "matrizes.html#conteúdo-da-aula",
+    "href": "matrizes.html#conteúdo-da-aula",
+    "title": "Matrizes",
+    "section": "Conteúdo da aula",
+    "text": "Conteúdo da aula\n\nDefinição de matriz\nAdição de matrizes\nMultiplicação por um escalar\nMultiplicação de matrizes\nTransposta de uma matriz\nÁlgebra de matrizes\nInversa de uma matriz\nInversa de uma matriz pelo método de Gauss-Jordan\nMatrizes elementares\nCadeias de Markov para Recifes de Coral"
+  },
+  {
+    "objectID": "matrizes.html#definição-de-matriz",
+    "href": "matrizes.html#definição-de-matriz",
+    "title": "Matrizes",
+    "section": "Definição de matriz",
+    "text": "Definição de matriz\n\\[A_{22} = \\begin{bmatrix}\n1 & 2 \\\\\n3 & 4\n\\end{bmatrix};\nB_{33} = \\begin{bmatrix}\n5 & 6 & 7 \\\\\n8 & 9 & 10 \\\\\n11 & 12 & 13\n\\end{bmatrix}; C_{34} = \\begin{bmatrix}\n14 & 15 & 16 & 17 \\\\\n18 & 19 & 20 & 21 \\\\\n22 & 23 & 24 & 25\n\\end{bmatrix}\\]\n\nEstrutura geral: Para uma matriz \\(m \\times n\\), \\(A = [a_{ij}]\\)\n\\[A_{mn} = \\begin{bmatrix}\na_{11} & a_{12} & \\cdots & a_{1n} \\\\\na_{21} & a_{22} & \\cdots & a_{2n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m1} & a_{m2} & \\cdots & a_{mn}\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "matrizes.html#adição-de-matrizes",
+    "href": "matrizes.html#adição-de-matrizes",
+    "title": "Matrizes",
+    "section": "Adição de matrizes",
+    "text": "Adição de matrizes\n\n\n\n\\(A = \\begin{bmatrix}\n1 & 4 & 7 \\\\\n2 & 5 & 8 \\\\\n3 & 6 & 9\n\\end{bmatrix}; B = \\begin{bmatrix}\n9 & 8 & 7 \\\\\n6 & 5 & 4 \\\\\n3 & 2 & 1\n\\end{bmatrix}\\)\n\n\\(A + B = \\begin{bmatrix}\n1 + 9 & 4 + 8 & 7 + 7 \\\\\n2 + 6 & 5 + 5 & 8 + 4 \\\\\n3 + 3 & 6 + 2 & 9 + 1\n\\end{bmatrix}\n= \\begin{bmatrix}\n10 & 12 & 14 \\\\\n8 & 10 & 12 \\\\\n6 & 8 & 10\n\\end{bmatrix}\\)\n\n\n\nEstrutura Geral: Para duas matrizes \\(m \\times n\\), \\(A = [a_{ij}]\\) e \\(B = [b_{ij}]\\):\n\\[A + B = [a_{ij} + b_{ij}] = \\begin{bmatrix}\na_{11} + b_{11} & a_{12} + b_{12} & \\cdots & a_{1n} + b_{1n} \\\\\na_{21} + b_{21} & a_{22} + b_{22} & \\cdots & a_{2n} + b_{2n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m1} + b_{m1} & a_{m2} + b_{m2} & \\cdots & a_{mn} + b_{mn}\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "matrizes.html#multiplicação-por-um-escalar",
+    "href": "matrizes.html#multiplicação-por-um-escalar",
+    "title": "Matrizes",
+    "section": "Multiplicação por um escalar",
+    "text": "Multiplicação por um escalar\n\n\n\nSeja \\(A\\) uma matriz \\(3 \\times 3\\):\n\\(A = \\begin{bmatrix}\n1 & 4 & 7 \\\\\n2 & 5 & 8 \\\\\n3 & 6 & 9\n\\end{bmatrix}\\)\n\nA multiplicação de \\(A\\) por um escalar \\(c = 3\\):\n\\(cA = 3 \\times \\begin{bmatrix}\n1 & 4 & 7 \\\\\n2 & 5 & 8 \\\\\n3 & 6 & 9\n\\end{bmatrix}\n= \\begin{bmatrix}\n3 \\times 1 & 3 \\times 4 & 3 \\times 7 \\\\\n3 \\times 2 & 3 \\times 5 & 3 \\times 8 \\\\\n3 \\times 3 & 3 \\times 6 & 3 \\times 9\n\\end{bmatrix}\n= \\begin{bmatrix}\n3 & 12 & 21 \\\\\n6 & 15 & 24 \\\\\n9 & 18 & 27\n\\end{bmatrix}\\)\n\n\n\nEstrutura Geral: Para uma matriz \\(m \\times n\\), \\(A = [a_{ij}]\\) e um escalar \\(c\\):\n\\[cA = [c \\times a_{ij}] = \\begin{bmatrix}\nc \\times a_{11} & c \\times a_{12} & \\cdots & c \\times a_{1n} \\\\\nc\\times a_{21} & c \\times a_{22} & \\cdots & c \\times a_{2n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\nc \\times a_{m1} & c \\times a_{m2} & \\cdots & c \\times a_{mn}\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "matrizes.html#multiplicação-de-matrizes",
+    "href": "matrizes.html#multiplicação-de-matrizes",
+    "title": "Matrizes",
+    "section": "Multiplicação de matrizes",
+    "text": "Multiplicação de matrizes\n\n\n\nSeja \\(A\\) uma matriz \\(2 \\times 3\\):\n\\(A = \\begin{bmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6\n\\end{bmatrix}\\)\ne \\(B\\) uma matriz \\(3 \\times 2\\):\n\\(B = \\begin{bmatrix}\n7 & 8 \\\\\n9 & 10 \\\\\n11 & 12\n\\end{bmatrix}\\)\n\nA multiplicação de \\(A\\) por \\(B\\):\n\\(AB = \\begin{bmatrix}\n1 \\cdot 7 + 2 \\cdot 9 + 3 \\cdot 11 & 1 \\cdot 8 + 2 \\cdot 10 + 3 \\cdot 12 \\\\\n4 \\cdot 7 + 5 \\cdot 9 + 6 \\cdot 11 & 4 \\cdot 8 + 5 \\cdot 10 + 6 \\cdot 12\n\\end{bmatrix}\n= \\begin{bmatrix}\n58 & 64 \\\\\n139 & 154\n\\end{bmatrix}\\)\n\n\n\nEstrutura Geral: Para uma matriz \\(m \\times n\\), \\(A = [a_{ij}]\\), e uma matriz \\(n \\times p\\), \\(B = [b_{ij}]\\):\n\\[AB = [c_{ij}] = \\begin{bmatrix}\n\\sum_{k=1}^{n} a_{1k} b_{k1} & \\sum_{k=1}^{n} a_{1k} b_{k2} & \\cdots & \\sum_{k=1}^{n} a_{1k} b_{kp} \\\\\n\\sum_{k=1}^{n} a_{2k} b_{k1} & \\sum_{k=1}^{n} a_{2k} b_{k2} & \\cdots & \\sum_{k=1}^{n} a_{2k} b_{kp} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\sum_{k=1}^{n} a_{mk} b_{k1} & \\sum_{k=1}^{n} a_{mk} b_{k2} & \\cdots & \\sum_{k=1}^{n} a_{mk} b_{kp}\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "matrizes.html#multiplicação-de-matrizes-1",
+    "href": "matrizes.html#multiplicação-de-matrizes-1",
+    "title": "Matrizes",
+    "section": "Multiplicação de matrizes",
+    "text": "Multiplicação de matrizes\nPropriedades Algébricas da Multiplicação de Matrizes\n\nSejam \\(A\\), \\(B\\) e \\(C\\) matrizes (cujas ordens possibilitem que as operações indicadas sejam realizadas) e seja \\(k\\) um escalar. Então:\n\n\n\n\n\n\n\n\n\nPropriedade\nDescrição\n\n\n\n\n1\n\\(A(BC) = (AB)C\\)\nAssociatividade\n\n\n2\n\\(A(B + C) = AB + AC\\)\nDistributiva à esquerda\n\n\n3\n\\((A + B)C = AC + BC\\)\nDistributiva à direita\n\n\n4\n\\(k(AB) = (kA)B = A(kB)\\)\n\n\n\n5\n\\(I_m A = A = A I_n\\) se \\(A\\) for \\(m \\times n\\)\nIdentidade da multiplicação"
+  },
+  {
+    "objectID": "matrizes.html#transposta-de-uma-matriz",
+    "href": "matrizes.html#transposta-de-uma-matriz",
+    "title": "Matrizes",
+    "section": "Transposta de uma matriz",
+    "text": "Transposta de uma matriz\n\n\n\nSeja \\(A\\) uma matriz \\(2 \\times 3\\):\n\\(A = \\begin{bmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6\n\\end{bmatrix}\\)\n\nA transposta de \\(A\\) é dada por \\(A^T = [a_{ij}]^T = [a_{ji}]\\):\n\\(A^T = \\begin{bmatrix}\n1 & 4 \\\\\n2 & 5 \\\\\n3 & 6\n\\end{bmatrix}\\)\n\n\n\nEstrutura Geral: Para uma matriz \\(m \\times n\\), \\(A = [a_{ij}]\\):\n\n\n\\(A = [a_{ij}] = \\begin{bmatrix}\na_{11} & a_{21} & \\cdots & a_{m1} \\\\\na_{12} & a_{22} & \\cdots & a_{m2} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{1n} & a_{2n} & \\cdots & a_{mn}\n\\end{bmatrix}\\)\n\n\\(A^T = [a_{ji}] = \\begin{bmatrix}\na_{11} & a_{21} & \\cdots & a_{n1} \\\\\na_{12} & a_{22} & \\cdots & a_{n2} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{1m} & a_{2m} & \\cdots & a_{nm}\n\\end{bmatrix}\\)"
+  },
+  {
+    "objectID": "matrizes.html#transposta-de-uma-matriz-1",
+    "href": "matrizes.html#transposta-de-uma-matriz-1",
+    "title": "Matrizes",
+    "section": "Transposta de uma matriz",
+    "text": "Transposta de uma matriz\nPropriedades Algébricas da Transposta de Matrizes\n\nSejam \\(A\\) e \\(B\\) matrizes (cujas ordens são tais que as operações indicadas podem ser realizadas) e seja \\(k\\) um escalar. Então:\n\n\n\n\nPropriedade\n\n\n\n\n1\n\\((A^T)^T = A\\)\n\n\n2\n\\((A + B)^T = A^T + B^T\\)\n\n\n3\n\\((kA)^T = k(A^T)\\)\n\n\n4\n\\((AB)^T = B^T A^T\\)\n\n\n5\n\\((A^r)^T = (A^T)^r\\) para todos os inteiros \\(r\\) não negativos"
+  },
+  {
+    "objectID": "matrizes.html#álgebra-de-matrizes",
+    "href": "matrizes.html#álgebra-de-matrizes",
+    "title": "Matrizes",
+    "section": "Álgebra de matrizes",
+    "text": "Álgebra de matrizes\nPropriedades Algébricas da Adição de Matrizes e da Multiplicação por Escalar\n\nSejam \\(A\\), \\(B\\) e \\(C\\) matrizes de mesma ordem, e \\(c\\) e \\(d\\) escalares. Então:\n\n\n\n\nPropriedade\nDescrição\n\n\n\n\n1\n\\(A + B = B + A\\)\nComutatividade\n\n\n2\n\\((A + B) + C = A + (B + C)\\)\nAssociatividade\n\n\n3\n\\(A + O = A\\)\n\n\n\n4\n\\(A + (-A) = O\\)\n\n\n\n5\n\\(c(A + B) = cA + cB\\)\nDistributividade\n\n\n6\n\\((c + d)A = cA + dA\\)\nDistributividade\n\n\n7\n\\(c(dA) = (cd)A\\)\n\n\n\n8\n\\(1A = A\\)"
+  },
+  {
+    "objectID": "matrizes.html#combinações-lineares-em-matrizes",
+    "href": "matrizes.html#combinações-lineares-em-matrizes",
+    "title": "Matrizes",
+    "section": "Combinações lineares em matrizes",
+    "text": "Combinações lineares em matrizes\n\nEscrevendo a matriz \\(B = \\begin{bmatrix} 1 & 4 \\\\ 2 & 1 \\end{bmatrix}\\) como combinação linear de \\(A_1 = \\begin{bmatrix} 0 & 1 \\\\ -1 & 0 \\end{bmatrix}\\), \\(A_2 = \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}\\) e \\(A_3 = \\begin{bmatrix} 1 & 1 \\\\ 1 & 1  \\end{bmatrix}\\)\ntemos\n\\[c_1A_1 + c_2A_2 + c_3A_3 = B\\]\n\\[c_1\\begin{bmatrix}\n0 & 1 \\\\\n-1 & 0\n\\end{bmatrix} +\nc_2\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix} +\nc_3\\begin{bmatrix}\n1 & 1 \\\\\n1 & 1\n\\end{bmatrix} =\n\\begin{bmatrix}\n1 & 4 \\\\\n2 & 1\n\\end{bmatrix}\\]\n\n\n\n\n\nA combinção linear pode ser resolvida pelo sistema:\n\\[\n\\begin{cases}\nc_2 + c_3 = 1 \\\\\nc_1 + c_3 = 4 \\\\\n-c_1 + c_3 = 2 \\\\\nc_2 + c_3 = 1\n\\end{cases}\n\\]\n\nQue tem solução:\n\\[c_1 = 1\\] \\[c_2 = -2\\] \\[c_3 = 3\\]"
+  },
+  {
+    "objectID": "matrizes.html#inversa-de-uma-matriz",
+    "href": "matrizes.html#inversa-de-uma-matriz",
+    "title": "Matrizes",
+    "section": "Inversa de uma matriz",
+    "text": "Inversa de uma matriz\n\n\n\nSeja \\(A = \\begin{bmatrix}\n2 & 3 \\\\\n1 & 4\n\\end{bmatrix}\\) e \\(A^{-1} = \\begin{bmatrix}\n\\frac{4}{5} & -\\frac{3}{5} \\\\\n-\\frac{1}{5} & \\frac{2}{5}\n\\end{bmatrix}\\)\n\nVerificamos que \\(A^{-1}\\) é inversa de \\(A\\) pois:\n\\(AA^{-1} = \\begin{bmatrix}\n2 & 3 \\\\\n1 & 4\n\\end{bmatrix}\n\\begin{bmatrix}\n\\frac{4}{5} & -\\frac{3}{5} \\\\\n-\\frac{1}{5} & \\frac{2}{5}\n\\end{bmatrix} = \\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix} = I\\)\ne\n\\(A^{-1}A = \\begin{bmatrix}\n\\frac{4}{5} & -\\frac{3}{5} \\\\\n-\\frac{1}{5} & \\frac{2}{5}\n\\end{bmatrix}\n\\begin{bmatrix}\n2 & 3 \\\\\n1 & 4\n\\end{bmatrix} = \\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix} = I\\)\n\n\n\n\n\n\n\n\n\nDefinição\n\n\nSe \\(A\\) é uma matriz \\(n \\times n\\), uma inversa de \\(A\\) é uma matriz \\(n \\times n\\) \\(A^{-1}\\) que satisfaz:\n\\[AA^{-1} = I\\] e \\[A^{-1}A = I\\]\nsendo \\(I = I_n\\) a matriz identidade \\(n \\times n\\). Se existir uma matriz \\(A^{-1}\\) assim, diremos que \\(A\\) é invertível."
+  },
+  {
+    "objectID": "matrizes.html#inversa-de-uma-matriz-1",
+    "href": "matrizes.html#inversa-de-uma-matriz-1",
+    "title": "Matrizes",
+    "section": "Inversa de uma matriz",
+    "text": "Inversa de uma matriz\nEm cada exemplo, verifique se a matriz \\(B\\) é inversa de \\(A\\)\n\n\n\n\n\n\\(A = \\begin{bmatrix}\n1 & 2 \\\\\n3 & 4\n\\end{bmatrix}\\) e \\(B = \\begin{bmatrix}\n-2 & 1 \\\\\n1.5 & -0.5\n\\end{bmatrix}\\)\n\n\n\n\\(A = \\begin{bmatrix}\n2 & 5 \\\\\n1 & 3\n\\end{bmatrix}\\) e \\(B = \\begin{bmatrix}\n3 & -5 \\\\\n-1 & 1\n\\end{bmatrix}\\)\n\n\n\n\n\n\n\\(A = \\begin{bmatrix}\n2 & 1 & 1 \\\\\n1 & 3 & 2 \\\\\n1 & 0 & 0\n\\end{bmatrix}\\) e \\(B = \\begin{bmatrix}\n0 & 0 & 1 \\\\\n-2 & 1 & 3 \\\\\n3 & -1 & -5\n\\end{bmatrix}\\)\n\n\n\n\\(A = \\begin{bmatrix}\n1 & 2 & 3 \\\\\n0 & 1 & 4 \\\\\n5 & 6 & 0\n\\end{bmatrix}\\) e \\(B = \\begin{bmatrix}\n4 & 2 & -2 \\\\\n-1 & 3 & 5 \\\\\n0 & 5 & 1\n\\end{bmatrix}\\)"
+  },
+  {
+    "objectID": "matrizes.html#inversa-de-uma-matriz-2",
+    "href": "matrizes.html#inversa-de-uma-matriz-2",
+    "title": "Matrizes",
+    "section": "Inversa de uma matriz",
+    "text": "Inversa de uma matriz\n\n\n\nVerifique que \\(A = \\begin{bmatrix}\n2 & 5 \\\\\n1 & 3\n\\end{bmatrix}\\) invertível e pode ser escrita por:\n\\(\\begin{bmatrix}\n2 & 5 \\\\\n1 & 3\n\\end{bmatrix}\n\\begin{bmatrix}\nw & x \\\\\ny & z\n\\end{bmatrix} =\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\\)\n\nQue resulta no sistema de equações:\n\\(\\begin{cases}\n2w + 5y = 1 \\\\\n2x + 5z = 0 \\\\\nw + 3y = 0 \\\\\nx + 3z = 1\n\\end{cases}\\)\n\n\n\n\nQue pode ser resolvido por:\n\\(\\left[ \\begin{array}{cccc|c}\n2 & 0 & 5 & 0 & 1\\\\\n0 & 2 & 0 & 5 & 0\\\\\n1 & 0 & 3 & 0 & 0\\\\\n0 & 1 & 0 & 3 & 1\n\\end{array} \\right]\\) \\(\\begin{array}{c}\nL_1 \\leftrightarrow L_3\\\\\nL_2 \\leftrightarrow L_4\\\\\n\\\\\n\\\\\n\\end{array}\\) \\(\\left[ \\begin{array}{cccc|c}\n1 & 0 & 3 & 0 & 0\\\\\n0 & 1 & 0 & 3 & 1\\\\\n2 & 0 & 5 & 0 & 1\\\\\n0 & 2 & 0 & 5 & 0\n\\end{array} \\right]\\) \\(\\begin{array}{c}\n\\\\\n\\\\\nL_3 - 2L_1 \\\\\nL_4 - 2L_2 \\\\\n\\end{array}\\) \\(\\left[ \\begin{array}{cccc|c}\n1 & 0 & 3 & 0 & 0\\\\\n0 & 1 & 0 & 3 & 1\\\\\n0 & 0 & -1 & 0 & 1\\\\\n0 & 0 & 0 & -1 & -2\n\\end{array} \\right]\\) \\(\\begin{array}{c}\nL_1 + 3L_3 \\\\\nL_2 + 3L_4 \\\\\n-L_3 \\\\\n-L_4 \\\\\n\\end{array}\\)\n\\(\\left[ \\begin{array}{cccc|c}\n1 & 0 & 0 & 0 & 3\\\\\n0 & 1 & 0 & 0 & -5\\\\\n0 & 0 & 1 & 0 & -1\\\\\n0 & 0 & 0 & 1 & 2\n\\end{array} \\right]\\) \\(S = \\left[\\begin{array}{c}\n3 \\\\\n-5 \\\\\n-1 \\\\\n2 \\\\\n\\end{array} \\right]\\) Portanto: \\(A^{-1} = \\begin{bmatrix}\n3 & -5 \\\\\n-1 & 2\n\\end{bmatrix}\\)"
+  },
+  {
+    "objectID": "matrizes.html#inversa-de-uma-matriz-3",
+    "href": "matrizes.html#inversa-de-uma-matriz-3",
+    "title": "Matrizes",
+    "section": "Inversa de uma matriz",
+    "text": "Inversa de uma matriz\n\n\n\nVerifique que \\(B = \\begin{bmatrix}\n1 & 2 \\\\\n2 & 4\n\\end{bmatrix}\\) não é invertível e portanto não pode ser escrita por:\n\\(\\begin{bmatrix}\n1 & 2 \\\\\n2 & 4\n\\end{bmatrix}\n\\begin{bmatrix}\nw & x \\\\\ny & z\n\\end{bmatrix} =\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\\)\n\nO sistema de equações lineares fica:\n\\(\\begin{cases}\nw + 2y = 1 \\\\\nx + 2z = 0 \\\\\n2w + 4y = 0 \\\\\n2x + 4z = 1\n\\end{cases}\\)\n\n\n\n\nQue pode ser representado por:\n\\(\\left[ \\begin{array}{cccc|c}\n1 & 0 & 2 & 0 & 1\\\\\n0 & 1 & 0 & 2 & 0\\\\\n2 & 0 & 4 & 0 & 0\\\\\n0 & 2 & 0 & 4 & 1\n\\end{array} \\right]\\) \\(\\begin{array}{c}\n\\\\\n\\\\\nL_3 - 2L_1 \\\\\nL_4 - 2L_2 \\\\\n\\end{array}\\) \\(\\left[ \\begin{array}{cccc|c}\n1 & 0 & 2 & 0 & 1\\\\\n0 & 1 & 0 & 2 & 0\\\\\n0 & 0 & 0 & 0 & -2\\\\\n0 & 0 & 0 & 0 & -1\n\\end{array} \\right]\\)\n\nA matriz na forma escalonada mostra que o sistema não tem solução e portanto a matriz \\(B\\) não é invertível."
+  },
+  {
+    "objectID": "matrizes.html#inversa-de-uma-matriz-4",
+    "href": "matrizes.html#inversa-de-uma-matriz-4",
+    "title": "Matrizes",
+    "section": "Inversa de uma matriz",
+    "text": "Inversa de uma matriz\n\n\n\n\n\n\n\nTeorema\n\n\nSe \\(A\\) é uma matriz \\(n \\times n\\) invertível, o sistema de equações lineares dado por \\(A\\vec{x} = \\vec{b}\\) tem uma única solução \\(\\vec{x} = A^{-1}\\vec{b}\\) para cada \\(\\vec{b}\\) em \\(\\mathbb{R}^n\\).\n\n\n\n\n\n\n\n\n\n\n\nPropriedades\n\n\n\nSe \\(A\\) é uma matriz invertível, então \\(A^{-1}\\) é invertível e \\((A^{-1})^{-1} = A\\).\nSe \\(A\\) é uma matriz invertível e \\(c\\) é um escalar não nulo, então \\(cA\\) é uma matriz invertível e \\((cA)^{-1} = \\frac{1}{c}A^{-1}\\).\nSe \\(A\\) e \\(B\\) são matrizes invertíveis de mesma ordem, então \\(AB\\) é invertível e \\((AB)^{-1} = B^{-1}A^{-1}\\).\nSe \\(A\\) é uma matriz invertível, então \\(A^T\\) é invertível e \\((A^T)^{-1} = (A^{-1})^T\\).\nSe \\(A\\) é uma matriz invertível, então, para todo inteiro não negativo \\(n\\), a matriz \\(A^n\\) é invertível e \\((A^n)^{-1} = (A^{-1})^n\\)."
+  },
+  {
+    "objectID": "matrizes.html#inversa-de-uma-matriz-pelo-método-de-gauss-jordan",
+    "href": "matrizes.html#inversa-de-uma-matriz-pelo-método-de-gauss-jordan",
+    "title": "Matrizes",
+    "section": "Inversa de uma matriz pelo método de Gauss-Jordan",
+    "text": "Inversa de uma matriz pelo método de Gauss-Jordan\n\nPara encontrar a inversa de uma matriz \\(A\\) usando o método de Gauss-Jordan, seguimos os seguintes passos:\n\nFormação da Matriz Aumentada:\n\n\nDada uma matriz \\(A\\) de ordem \\(n \\times n\\), formamos a matriz aumentada \\([A \\mid I]\\), onde \\(I\\) é a matriz identidade de ordem \\(n \\times n\\).\n\n\nAplicação de Operações Elementares:\n\n\nAplicamos operações elementares sobre as linhas da matriz aumentada \\([A \\mid I]\\) para transformar a parte esquerda (a matriz \\(A\\)) na matriz identidade \\(I\\).\n\n\nObtenção da Inversa:\n\n\nQuando a parte esquerda da matriz aumentada se transforma em \\(I\\), a parte direita será a matriz inversa \\(A^{-1}\\). Ou seja, \\([I \\mid A^{-1}]\\)."
+  },
+  {
+    "objectID": "matrizes.html#inversa-de-uma-matriz-pelo-método-de-gauss-jordan-1",
+    "href": "matrizes.html#inversa-de-uma-matriz-pelo-método-de-gauss-jordan-1",
+    "title": "Matrizes",
+    "section": "Inversa de uma matriz pelo método de Gauss-Jordan",
+    "text": "Inversa de uma matriz pelo método de Gauss-Jordan\n\nExemplo Prático\n\n\nConsidere a matriz \\(A = \\begin{bmatrix} 2 & 1 & 1 \\\\ 1 & 3 & 2 \\\\ 1 & 0 & 0 \\end{bmatrix}\\).\n\nQue tem a matriz aumentada \\([A \\mid I]\\):\n\\[\\left[\\begin{array}{ccc|ccc}\n   2 & 1 & 1 & 1 & 0 & 0 \\\\\n   1 & 3 & 2 & 0 & 1 & 0 \\\\\n   1 & 0 & 0 & 0 & 0 & 1\n   \\end{array}\\right]\\]\n\n\n\n\nAplique operações elementares para transformar a parte esquerda em \\(I\\):\n\\(\\left[\\begin{array}{ccc|ccc}\n   2 & 1 & 1 & 1 & 0 & 0 \\\\\n   1 & 3 & 2 & 0 & 1 & 0 \\\\\n   1 & 0 & 0 & 0 & 0 & 1\n   \\end{array}\\right]\\) \\(\\begin{array}{c}\n   L_1 \\leftrightarrow L_3\\\\\n   \\\\\n   \\\\\n   \\end{array}\\) \\(\\left[\\begin{array}{ccc|ccc}\n   1 & 0 & 0 & 0 & 0 & 1 \\\\\n   1 & 3 & 2 & 0 & 1 & 0 \\\\\n   2 & 1 & 1 & 1 & 0 & 0\n   \\end{array}\\right]\\) \\(\\begin{array}{c}\n   \\\\\n   L_2 - L_1\\\\\n   L_3 - 2L_1\\\\\n   \\end{array}\\) \\(\\left[\\begin{array}{ccc|ccc}\n   1 & 0 & 0 & 0 & 0 & 1 \\\\\n   0 & 3 & 2 & 0 & 1 & -1 \\\\\n   0 & 1 & 1 & 1 & 0 & -2\n   \\end{array}\\right]\\) \\(\\begin{array}{c}\n   \\\\\n   L_2 \\leftrightarrow L_3\\\\\n   \\\\\n   \\end{array}\\) \\(\\left[\\begin{array}{ccc|ccc}\n   1 & 0 & 0 & 0 & 0 & 1 \\\\\n   0 & 1 & 1 & 1 & 0 & -2 \\\\\n   0 & 3 & 2 & 0 & 1 & -1\n   \\end{array}\\right]\\) \\(\\begin{array}{c}\n   \\\\\n   \\\\\n   L_3 - 3L_2\\\\\n   \\end{array}\\)\n\\(\\left[\\begin{array}{ccc|ccc}\n   1 & 0 & 0 & 0 & 0 & 1 \\\\\n   0 & 1 & 1 & 1 & 0 & -2 \\\\\n   0 & 0 & -1 & -3 & 1 & 5\n   \\end{array}\\right]\\) \\(\\begin{array}{c}\n   \\\\\n   \\\\\n   -L_3\\\\\n   \\end{array}\\) \\(\\left[\\begin{array}{ccc|ccc}\n   1 & 0 & 0 & 0 & 0 & 1 \\\\\n   0 & 1 & 1 & 1 & 0 & -2 \\\\\n   0 & 0 & 1 & 3 & -1 & -5\n   \\end{array}\\right]\\) \\(\\begin{array}{c}\n   \\\\\n   L_2 - L_3\\\\\n   \\\\\n   \\end{array}\\) \\(\\left[\\begin{array}{ccc|ccc}\n   1 & 0 & 0 & 0 & 0 & 1 \\\\\n   0 & 1 & 0 & -2 & 1 & 3 \\\\\n   0 & 0 & 1 & 3 & -1 & -5\n   \\end{array}\\right]\\)\n\n\\[A^{-1} = \\begin{bmatrix}\n   0  &  0 &  1 \\\\\n   -2 &  1 &  3 \\\\\n   3  & -1 & -5\n   \\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "matrizes.html#matrizes-elementares",
+    "href": "matrizes.html#matrizes-elementares",
+    "title": "Matrizes",
+    "section": "Matrizes Elementares",
+    "text": "Matrizes Elementares\n\nDefinição:\nMatrizes elementares são aquelas obtidas através de operações elementares realizadas sobre a matriz identidade. Elas desempenham um papel fundamental na solução de sistemas lineares e na obtenção da inversa de uma matriz.\nExemplos de Operações Elementares:\n\nTroca de Linhas: Exemplo: Trocar a linha 1 pela linha 2.\n\\[E = \\begin{bmatrix} 0 & 1 \\\\ 1 & 0 \\end{bmatrix}\\]\nMultiplicação de uma Linha por um Escalar: Exemplo: Multiplicar a linha 1 por um escalar \\(k\\).\n\\[E = \\begin{bmatrix} k & 0 \\\\ 0 & 1 \\end{bmatrix}\\]\nAdição de Múltiplos de Linhas: Exemplo: Adicionar a linha 2 multiplicada por um escalar \\(k\\) à linha 1.\n\\[E = \\begin{bmatrix} 1 & k \\\\ 0 & 1 \\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "matrizes.html#exemplo-de-matrizes-elementares-para-calcular-a-inversa",
+    "href": "matrizes.html#exemplo-de-matrizes-elementares-para-calcular-a-inversa",
+    "title": "Matrizes",
+    "section": "Exemplo de Matrizes Elementares para Calcular a Inversa",
+    "text": "Exemplo de Matrizes Elementares para Calcular a Inversa\n\n\n\nConsidere a matriz \\(A = \\begin{bmatrix} 2 & 1 & 1 \\\\ 1 & 3 & 2 \\\\ 1 & 0 & 0 \\end{bmatrix}\\).\n\nQue foi resolvida no exemplo anterior pela sequência de operações elementares:\n\n\\(L_1 \\leftrightarrow L_3\\)\n\\(L_2 \\rightarrow L_2 - L_1\\); \\(L_3 \\rightarrow L_3 - 2L_1\\)\n\\(L_2 \\leftrightarrow L_3\\)\n\\(L_3 \\rightarrow L_3 - 3L_2\\)\n\\(L_3 \\rightarrow -L_3\\)\n\\(L_2 \\rightarrow L_2 - L_3\\)\n\n\n\n\n\n\n\n\nTroca de \\(L_1\\) e \\(L_3\\):\n\\[E_1 = \\begin{bmatrix}\n0 & 0 & 1 \\\\\n0 & 1 & 0 \\\\\n1 & 0 & 0\n\\end{bmatrix}\\]\n\\(L_2 \\rightarrow L_2 - L_1\\); \\(L_3 \\rightarrow L_3 - 2L_1\\):\n\\[E_2 = \\begin{bmatrix}\n1 & 0 & 0 \\\\\n-1 & 1 & 0 \\\\\n-2 & 0 & 1\n\\end{bmatrix}\\]\nTroca de \\(L_2\\) e \\(L_3\\):\n\\[E_3 = \\begin{bmatrix}\n1 & 0 & 0 \\\\\n0 & 0 & 1 \\\\\n0 & 1 & 0\n\\end{bmatrix}\\]\n\n\n\n\\(L_3 \\rightarrow L_3 - 3L_2\\):\n\\[E_4 = \\begin{bmatrix}\n1 & 0 & 0 \\\\\n0 & 1 & 0 \\\\\n0 & -3 & 1\n\\end{bmatrix}\\]\nMultiplicação de \\(L_3\\) por \\(-1\\):\n\\[E_5 = \\begin{bmatrix}\n1 & 0 & 0 \\\\\n0 & 1 & 0 \\\\\n0 & 0 & -1\n\\end{bmatrix}\\]\n\\(L_2 \\rightarrow L_2 - L_3\\):\n\\[E_6 = \\begin{bmatrix}\n1 & 0 & 0 \\\\\n0 & 1 & -1 \\\\\n0 & 0 & 1\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "matrizes.html#exemplo-de-matrizes-elementares-para-calcular-a-inversa-1",
+    "href": "matrizes.html#exemplo-de-matrizes-elementares-para-calcular-a-inversa-1",
+    "title": "Matrizes",
+    "section": "Exemplo de Matrizes Elementares para Calcular a Inversa",
+    "text": "Exemplo de Matrizes Elementares para Calcular a Inversa\n\nEstabelecidas as matrizes elementares \\(E_1\\) a \\(E_6\\), tem-se a seguinte relação:\n\\[E_6 \\times E_5 \\times E_4 \\times E_3 \\times E_2 \\times E_1 \\times A = I\\]\nE consequentemente:\n\\[E_1^{-1} \\times E_2^{-1} \\times E_3^{-1} \\times E_4^{-1} \\times E_5^{-1} \\times E_6^{-1} = A\\]\n\n\n\n\n\n\n\n\n\nO Teorema Fundamental das Matrizes Invertíveis - versão 1\n\n\nSeja \\(A\\) uma matriz \\(n \\times n\\). As seguintes afirmações são equivalentes:\n\n\\(A\\) é invertível.\n\\(A\\vec{x} = \\vec{b}\\) tem uma única solução para cada \\(\\vec{b}\\) em \\(\\mathbb{R}^n\\).\n\\(A\\vec{x} = 0\\) tem apenas a solução trivial.\nA forma escalonada reduzida de \\(A\\) é \\(I_n\\).\n\\(A\\) é um produto de matrizes elementares."
+  },
+  {
+    "objectID": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral",
+    "href": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral",
+    "title": "Matrizes",
+    "section": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral",
+    "text": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral\n\nProblema\nOs recifes de coral enfrentam várias ameaças ambientais, como branqueamento, acidificação dos oceanos e destruição física. Essas ameaças podem ser modeladas usando uma Cadeia de Markov para entender a probabilidade de um recife estar em um certo estado de saúde ao longo do tempo.\nEstados\nDefinimos três estados possíveis para a saúde de um recife de coral:\n\nS1: Saudável\nS2: Moderadamente Degradado\nS3: Severamente Degradado\n\nMatriz de Transição\nA matriz de transição de estados, \\(P\\), representa as probabilidades de transição entre os estados de saúde de um recife de coral de um período para o outro.\n\\[P = \\begin{bmatrix}\n0.7 & 0.3 & 0.1 \\\\\n0.2 & 0.5 & 0.3 \\\\\n0.1 & 0.2 & 0.6\n\\end{bmatrix}\\]\nCada elemento \\(P_{ij}\\) na matriz representa a probabilidade de transição do estado \\(j\\) na coluna para o estado \\(i\\) na linha. Por exemplo, \\(P_{12} = 0.2\\) indica que há uma probabilidade de 20% de um recife saudável (\\(S1\\)) passar para o estado moderadamente degradado (\\(S2\\)) no próximo período."
+  },
+  {
+    "objectID": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-1",
+    "href": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-1",
+    "title": "Matrizes",
+    "section": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral",
+    "text": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral\n\nEstado inicial\nVamos considerar que inicialmente no tempo \\(t_0\\) 80% dos recifes estão saudáveis, 15% estão moderadamente degradados e 5% estão severamente degradados. Isso pode ser representado pelo vetor de estado inicial:\n\\[\\vec{v_0} = \\begin{bmatrix}\n0.8 \\\\\n0.15 \\\\\n0.05\n\\end{bmatrix}\\]\nEstado em \\(t + 1\\)\nPara determinar o estado dos recifes após um período de tempo \\(t_1\\), multiplicamos o vetor de estado inicial pela matriz de transição:\n\\[\n\\vec{v_1} = P \\times \\vec{v_0} = \\begin{bmatrix}\n0.7 & 0.3 & 0.1 \\\\\n0.2 & 0.5 & 0.3 \\\\\n0.1 & 0.2 & 0.6\n\\end{bmatrix} \\times \\begin{bmatrix}\n0.8 \\\\\n0.15 \\\\\n0.05\n\\end{bmatrix} = \\begin{bmatrix}\n0.61 \\\\\n0.25 \\\\\n0.14\n\\end{bmatrix}\n\\]\nIsso significa que, após um período, 61% dos recifes estarão saudáveis, 25% estarão moderadamente degradados e 14% estarão severamente degradados."
+  },
+  {
+    "objectID": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-2",
+    "href": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-2",
+    "title": "Matrizes",
+    "section": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral",
+    "text": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral\n\nEstado Estacionário\nO estado estacionário é um vetor de probabilidades que representa a distribuição dos estados de um sistema em equilíbrio, onde as probabilidades de estar em cada estado não mudam com o tempo. Para uma cadeia de Markov, isso ocorre quando o vetor de estado não muda após uma multiplicação pela matriz de transição.\nSe \\(\\vec{v_{ss}}\\) é um vetor de estado estacionário e \\(P\\) é a matriz de transição, então:\n\\[\n\\vec{v_{ss}} = P \\times \\vec{v_{ss}}\n\\]\nPortanto, precisamos resolver o sistema de equações:\n\\[\n\\begin{bmatrix}\n0.7 & 0.3 & 0.1 \\\\\n0.2 & 0.5 & 0.3 \\\\\n0.1 & 0.2 & 0.6\n\\end{bmatrix} \\times \\begin{bmatrix}\n\\pi_1 \\\\\n\\pi_2 \\\\\n\\pi_3\n\\end{bmatrix} = \\begin{bmatrix}\n\\pi_1 \\\\\n\\pi_2 \\\\\n\\pi_3\n\\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-3",
+    "href": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-3",
+    "title": "Matrizes",
+    "section": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral",
+    "text": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral\n\nResolução do Sistema\n\n\nHá ainda uma condição adicional de que a soma das probabilidades em \\(\\vec{v_t}\\) seja 1:\n\\[\n\\pi_1 + \\pi_2 + \\pi_3 = 1\n\\]\n\nQue gera e sistema de equações:\n\\[\n\\begin{cases}\n0.7\\pi_1 + 0.3\\pi_2 + 0.1\\pi_3 = \\pi_1 \\\\\n0.2\\pi_1 + 0.5\\pi_2 + 0.3\\pi_3 = \\pi_2 \\\\\n0.1\\pi_1 + 0.2\\pi_2 + 0.6\\pi_3 = \\pi_3 \\\\\n\\pi_1 + \\pi_2 + \\pi_3 = 1\n\\end{cases}\n\\]\n\n\n\n\n\n\nO pode ser reorganizado como:\n\\[\n\\begin{cases}\n-3\\pi_1 + 3\\pi_2 + \\pi_3 = 0 \\\\\n2\\pi_1 - 5\\pi_2 + 3\\pi_3 = 0 \\\\\n\\pi_1 + 2\\pi_2 - 4\\pi_3 = 0 \\\\\n\\pi_1 + \\pi_2 + \\pi_3 = 1\n\\end{cases}\n\\]\n\nE tem solução:\n\\[\n\\vec{v_{ss}} = \\begin{bmatrix} \\frac{7}{17} \\\\ \\frac{11}{34} \\\\ \\frac{9}{34} \\end{bmatrix} ~ \\sim \\begin{bmatrix}\n0.4117 \\\\\n0.3235 \\\\\n0.2647\n\\end{bmatrix}\n\\]\n\n\n\n\n\n\n\n\n\nResoluçao completa\n\n\nFaça o download da RESOLUÇÃO COMPLETA"
+  },
+  {
+    "objectID": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-4",
+    "href": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-4",
+    "title": "Matrizes",
+    "section": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral",
+    "text": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral\n\nInterpretação do vetor de Estado Estacionário\nNo longo prazo, a distribuição das probabilidades entre os estados é:\n\n\\(\\pi_1 = \\frac{7}{17} ~ \\sim 0.4117\\)\n\\(\\pi_2 = \\frac{11}{34} ~ \\sim 0.3235\\)\n\\(\\pi_3 = \\frac{9}{34} ~ \\sim 0.2647\\)\n\n\n\n\n\n\n\n\n\nConclusão\n\n\nA existência de um vetor estacionário indica que, independentemente do estado inicial, a cadeia de Markov converge para essa distribuição de probabilidade quando o sistema está em equilíbrio.\nPortanto, mantendo as condições atuais que resultam na matriz de transição vigente, espera-se que, a longo prazo, aproximadamente 41,18% do recife de coral permanecerá em condições Saudáveis, 32,35% estará Moderadamente Degradado e 26,47% será Severamente Degradado."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "9833 - BASES DA MATEMÁTICA E ESTATÍSTICA PARA CIÊNCIAS DO MAR - Bict Mar - Unifesp",
     "section": "",
-    "text": "A Geometria e a Álgebra de Vetores\n\n\n\n\n\n\n\n\n\n\n\n\n\nComprimento e ângulo: o produto escalar\n\n\n\n\n\n\n\n\n\n\n\n\n\nSistemas de Equações Lineares\n\n\n\n\n\n\n\n\n\n\n\n\n\nMatrizes\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegressão Linear Simples e o Método dos Mínimos Quadrados\n\n\n\n\n\n\n\nNo matching items"
+    "text": "A Geometria e a Álgebra de Vetores\n\n\n\n\n\n\n\n\n\n\n\n\n\nComprimento e ângulo: o produto escalar\n\n\n\n\n\n\n\n\n\n\n\n\n\nSistemas de Equações Lineares\n\n\n\n\n\n\n\n\n\n\n\n\n\nMatrizes\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegressão Linear Simples e o Método dos Mínimos Quadrados\n\n\n\n\n\n\n\n\n\n\n\n\n\nMatriz de Leslie\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "geometria_vetores.html#conteúdo-da-aula",
+    "href": "geometria_vetores.html#conteúdo-da-aula",
+    "title": "A Geometria e a Álgebra de Vetores",
+    "section": "Conteúdo da aula",
+    "text": "Conteúdo da aula\n\nDefinição de Vetores\nVetores no Plano Cartesiano\nIgualdade de Vetores\nSoma de vetores\nMultiplicação de um vetor por um escalar\nVetores em \\(\\mathbb{R}^3\\)\nVetores em \\(\\mathbb{R}^n\\)\nPropriedades Algébricas dos Vetores"
+  },
+  {
+    "objectID": "geometria_vetores.html#vetores",
+    "href": "geometria_vetores.html#vetores",
+    "title": "A Geometria e a Álgebra de Vetores",
+    "section": "Vetores",
+    "text": "Vetores\n\n\n\n\n\n\nDefinição\n\n\nSegmento de reta orientado que representa o deslocamento do ponto de origem até um ponto de destino. O vetor de A até B é denotado por \\(\\mathbf{AB}\\), ou \\(\\vec{AB}\\). O ponto A é chamado de ponto inicial (ou origem) do vetor, enquanto o ponto B é chamado de ponto final (ou extremidade). Frequentemente, um vetor é representado por letra minúscula em negrito, como \\(\\mathbf{v}\\) ou ainda por \\(\\vec{v}\\).\n\nComprimento: distância entre o ponto inicial e o ponto final do vetor.\nDireção: orientação do vetor no espaço, definida pelo ângulo que faz com os eixos coordenados."
+  },
+  {
+    "objectID": "geometria_vetores.html#vetores-no-plano-cartesiano",
+    "href": "geometria_vetores.html#vetores-no-plano-cartesiano",
+    "title": "A Geometria e a Álgebra de Vetores",
+    "section": "Vetores no Plano Cartesiano",
+    "text": "Vetores no Plano Cartesiano\n\n\n\n\nO ponto \\(A\\) pode ser representado pelo vetor posição que tem início na origem \\(O\\) e termina no ponto \\(A\\).\nAs coordenadas dos vetores são chamadas de componentes do vetor\n\n\\(\\vec{a} = [-9, 4]\\),\n\\(\\vec{b} = [-4, 10]\\),\n\\(\\cdots\\)\n\\(\\vec{e} = [8, -8]\\)"
+  },
+  {
+    "objectID": "geometria_vetores.html#vetores-no-plano-cartesiano-1",
+    "href": "geometria_vetores.html#vetores-no-plano-cartesiano-1",
+    "title": "A Geometria e a Álgebra de Vetores",
+    "section": "Vetores no Plano Cartesiano",
+    "text": "Vetores no Plano Cartesiano\n\n\n\n\nUm vetor pode ter origem no ponto A e destino no ponto B.\n\n\\(\\vec{AB} = B - A = [-4, 10] - [-9,4] = [5, 6]\\)\n\\(\\vec{CB} = B - C = [-4, 10] - [-1,-3] = [3, 13]\\)\n\\(\\vec{DE} = E - D = [8, -8] - [4,8] = [4, -16]\\)"
+  },
+  {
+    "objectID": "geometria_vetores.html#igualdade-de-vetores",
+    "href": "geometria_vetores.html#igualdade-de-vetores",
+    "title": "A Geometria e a Álgebra de Vetores",
+    "section": "Igualdade de Vetores",
+    "text": "Igualdade de Vetores\n\n\n\nConsidere:\n\\(A = [-4, -2]\\)\n\\(B = [4, 6]\\)\n\\(C = [-3, -6]\\)\n\\(D = [5, 2]\\)\n\\(E = [-9, 2]\\)\n\\(F = [3, 8]\\)"
+  },
+  {
+    "objectID": "geometria_vetores.html#igualdade-de-vetores-1",
+    "href": "geometria_vetores.html#igualdade-de-vetores-1",
+    "title": "A Geometria e a Álgebra de Vetores",
+    "section": "Igualdade de Vetores",
+    "text": "Igualdade de Vetores\n\n\n\nSejam:\n\\(\\vec{AB} = B - A = [4, 6] - [-4, -2] = [8, 8]\\)\n\\(\\vec{CD} = D - C = [5, 2] - [-3, -6] = [8, 8]\\)\n\\(\\vec{EF} = F - E = [3, 8] - [-9, 2] = [11, 6]\\)\nEntão:\n\\(\\vec{AB} = \\vec{CD} \\ne \\vec{EF}\\)\n\n\n\n\n\n\nNote\n\n\n\\(\\vec{AB} \\ne \\vec{BA}\\)\n\\(\\vec{BA} = A - B = [-4, -2] - [4, 6] = [-8, -8]\\)"
+  },
+  {
+    "objectID": "geometria_vetores.html#soma-de-vetores",
+    "href": "geometria_vetores.html#soma-de-vetores",
+    "title": "A Geometria e a Álgebra de Vetores",
+    "section": "Soma de vetores",
+    "text": "Soma de vetores\n\n\n\n\\(\\vec{u} = [u_1, u_2]\\), \\(\\vec{v} = [v_1, v_2]\\)\n\\(\\vec{u} + \\vec{v} = [u_1, u_2] + [v_1, v_2] = [u_1 + v_1, u_2 + v_2]\\)\n\n\\(\\vec{u} = [1, 2]\\), \\(\\vec{v} = [5, 3]\\)\n\\(\\vec{u} + \\vec{v} = [1, 2] + [5, 3] = [1 + 5, 2 + 3]\\)\n\\(\\vec{u} + \\vec{v} = [6, 5]\\)"
+  },
+  {
+    "objectID": "geometria_vetores.html#multiplicação-de-um-vetor-por-um-escalar",
+    "href": "geometria_vetores.html#multiplicação-de-um-vetor-por-um-escalar",
+    "title": "A Geometria e a Álgebra de Vetores",
+    "section": "Multiplicação de um vetor por um escalar",
+    "text": "Multiplicação de um vetor por um escalar\n\n\n\nSeja um escalar \\(k\\) e um vetor \\(\\vec{v}\\):\n\\(k \\vec{v} = k [v_1, v_2] = [kv_1, kv_2]\\)\nPara \\(\\vec{v} = [-2, 4]\\):\n\\(2 \\vec{v} = [2(-2), 2(4)] = [-4, 8]\\)\n\\(\\frac{1}{2} \\vec{v} = [\\frac{1}{2} (-2), \\frac{1}{2} (4)] = [-1, 2]\\)\n\\(-2 \\vec{v} = [-2(-2), -2(4)] = [4,- 8]\\)"
+  },
+  {
+    "objectID": "geometria_vetores.html#vetores-em-mathbbr3",
+    "href": "geometria_vetores.html#vetores-em-mathbbr3",
+    "title": "A Geometria e a Álgebra de Vetores",
+    "section": "Vetores em \\(\\mathbb{R}^3\\)",
+    "text": "Vetores em \\(\\mathbb{R}^3\\)\nO conjunto de todas as triplas ordenadas de números reais é denotado por \\(\\mathbb{R}^3\\).\n\n\\(\\vec{v} = [v_1, v_2, v_3]\\)\n\nTodas as definições de \\(\\mathbb{R}^2\\) valem para \\(\\mathbb{R}^3\\)."
+  },
+  {
+    "objectID": "geometria_vetores.html#vetores-em-mathbbrn",
+    "href": "geometria_vetores.html#vetores-em-mathbbrn",
+    "title": "A Geometria e a Álgebra de Vetores",
+    "section": "Vetores em \\(\\mathbb{R}^n\\)",
+    "text": "Vetores em \\(\\mathbb{R}^n\\)\n\nEm \\(\\mathbb{R}^n\\), o conjunto de todas as n-uplas ordenadas de números reais, os vetores podem ser representados como linhas ou colunas, com suas entradas denominadas componentes.\n\n\n\\(\\vec{v} = [v_1, v_2, \\ldots, v_n]\\)\n\n\nAs operações de adição de vetores e multiplicação por escalar são definidas de maneira natural. Por exemplo, para os vetores \\(\\vec{u} = [u_1, u_2, \\ldots, u_n]\\) e \\(\\vec{v} = [v_1, v_2, \\ldots, v_n]\\), a i-ésima componente de \\(\\vec{u} + \\vec{v}\\) é \\(u_i + v_i\\), e a i-ésima componente de \\(k\\vec{v}\\) é \\(kv_i\\)."
+  },
+  {
+    "objectID": "geometria_vetores.html#propriedades-algébricas-de-vetores-em-mathbbrn",
+    "href": "geometria_vetores.html#propriedades-algébricas-de-vetores-em-mathbbrn",
+    "title": "A Geometria e a Álgebra de Vetores",
+    "section": "Propriedades Algébricas de Vetores em \\(\\mathbb{R}^n\\)",
+    "text": "Propriedades Algébricas de Vetores em \\(\\mathbb{R}^n\\)\n\nSejam \\(\\vec{u}\\), \\(\\vec{v}\\) e \\(\\vec{w}\\) vetores em \\(\\mathbb{R}^n\\), e \\(k\\) e \\(l\\) escalares. Então:\n\n\n\n\n\n\n\n\n\nPropriedade\nDescrição\n\n\n\n\n1\n\\(\\vec{u} + \\vec{v} = \\vec{v} + \\vec{u}\\)\nComutatividade\n\n\n2\n\\((\\vec{u} + \\vec{v}) + \\vec{w} = \\vec{u} + (\\vec{v} + \\vec{w})\\)\nAssociatividade\n\n\n3\n\\(\\vec{u} + \\vec{0} = \\vec{u}\\)\n\n\n\n4\n\\(\\vec{u} + (-\\vec{u}) = \\vec{0}\\)\n\n\n\n5\n\\(k(\\vec{u} + \\vec{v}) = k\\vec{u} + k\\vec{v}\\)\nDistributividade\n\n\n6\n\\((k + l)\\vec{u} = k\\vec{u} + l\\vec{u}\\)\nDistributividade\n\n\n7\n\\(k(l\\vec{u}) = (kl)\\vec{u}\\)\n\n\n\n8\n\\(1\\vec{u} = \\vec{u}\\)"
+  },
+  {
+    "objectID": "geometria_vetores.html#combinações-lineares",
+    "href": "geometria_vetores.html#combinações-lineares",
+    "title": "A Geometria e a Álgebra de Vetores",
+    "section": "Combinações Lineares",
+    "text": "Combinações Lineares\n\nUma combinação linear de vetores é um vetor obtido como a soma ponderada de outros vetores, onde cada vetor é multiplicado por um escalar.\n\n\n\n\n\n\nDefinição\n\n\nFormalmente, um vetor \\(\\vec{v}\\) é dito ser uma combinação linear dos vetores \\(\\vec{v}_1, \\vec{v}_2, \\ldots, \\vec{v}_k\\) se existirem escalares \\(c_1, c_2, \\ldots, c_k\\) tais que:\n\\[\\vec{v} = c_1 \\vec{v}_1 + c_2 \\vec{v}_2 + \\cdots + c_k \\vec{v}_k\\]\n\n\n\nOs escalares \\(c_1, c_2, \\ldots, c_k\\) são chamados de coeficientes da combinação linear. Em outras palavras, \\(\\vec{v}\\) é construído a partir dos vetores \\(\\vec{v}_1, \\vec{v}_2, \\ldots, \\vec{v}_k\\) pela combinação dos seus múltiplos escalares. Essa definição é fundamental na álgebra linear, pois permite a construção de vetores em um espaço vetorial a partir de uma base de vetores dados."
+  },
+  {
+    "objectID": "geometria_vetores.html#combinações-lineares-1",
+    "href": "geometria_vetores.html#combinações-lineares-1",
+    "title": "A Geometria e a Álgebra de Vetores",
+    "section": "Combinações Lineares",
+    "text": "Combinações Lineares\n\nConsidere os vetores \\(\\vec{v}_1 = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\\) e \\(\\vec{v}_2 = \\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix}\\) no espaço \\(\\mathbb{R}^2\\) e os escalares \\(c_1 = 2\\) e \\(c_2 = -1\\).\n\\[\\vec{v} = c_1 \\vec{v}_1 + c_2 \\vec{v}_2\\]\n\\(\\vec{v} = 2 \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix} + (-1) \\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix} = \\begin{pmatrix} 2 \\cdot 1 \\\\ 2 \\cdot 2 \\end{pmatrix} + \\begin{pmatrix} -1 \\cdot 3 \\\\ -1 \\cdot 4 \\end{pmatrix} = \\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix} + \\begin{pmatrix} -3 \\\\ -4 \\end{pmatrix} = \\begin{pmatrix} 2 - 3 \\\\ 4 - 4 \\end{pmatrix} = \\begin{pmatrix} -1 \\\\ 0 \\end{pmatrix}\\)\nPortanto, o vetor \\(\\vec{v} = \\begin{pmatrix} -1 \\\\ 0 \\end{pmatrix}\\) é uma combinação linear dos vetores \\(\\vec{v}_1\\) e \\(\\vec{v}_2\\) com os coeficientes dados \\(c_1 = 2\\) e \\(c_2 = -1\\).\n\n\n\n\n\n\n\nNote\n\n\nPara visualizar a ideia de combinações lineares, acesse o GeoGebra."
   },
   {
     "objectID": "sistema_equacoes_lineares.html#conteúdo-da-aula",
@@ -298,433 +725,6 @@
     "href": "sistema_equacoes_lineares.html#dependência-linear-8",
     "title": "Sistemas de Equações Lineares",
     "section": "Dependência linear",
-    "text": "Dependência linear\n\n\n\n\n\n\n\nTeorema\n\n\nQualquer conjunto de \\(m\\) vetores de \\(\\mathbb{R}^n\\) é linearmente dependente se \\(m &gt; n\\).\n\n\n\n\nExemplo:\nOs vetores \\(\\left[ \\begin{array}{c} 1\\\\ 3 \\end{array} \\right]\\), \\(\\left[ \\begin{array}{c} 2\\\\ 4 \\end{array} \\right]\\) e \\(\\left[ \\begin{array}{c} 3\\\\ 1 \\end{array} \\right]\\) são linearmente dependentes pois não pode haver mais que dois vetores linearmente independentes em \\(\\mathbb{R}^2\\)\n\nVerifique isso resolvendo o sistema homogêneo\n\\[c_1\\left[ \\begin{array}{c} 1\\\\ 3 \\end{array} \\right] + c_2\\left[ \\begin{array}{c} 2\\\\ 4 \\end{array} \\right] + c_3\\left[ \\begin{array}{c} 3\\\\ 1 \\end{array} \\right] = \\left[ \\begin{array}{c} 0\\\\ 0 \\end{array} \\right]\\]\n\n\n\n\nBICT Mar - Unifesp"
-  },
-  {
-    "objectID": "comprimento_angulo.html#conteúdo-da-aula",
-    "href": "comprimento_angulo.html#conteúdo-da-aula",
-    "title": "Comprimento e ângulo: o produto escalar",
-    "section": "Conteúdo da aula",
-    "text": "Conteúdo da aula\n\nO Produto Escalar\nComprimento de um vetor\nVetor unitário:\nDistância\nÂngulo entre dois vetores\nVetores ortogonais"
-  },
-  {
-    "objectID": "comprimento_angulo.html#o-produto-escalar",
-    "href": "comprimento_angulo.html#o-produto-escalar",
-    "title": "Comprimento e ângulo: o produto escalar",
-    "section": "O Produto Escalar",
-    "text": "O Produto Escalar\n\n\n\n\n\n\nDefinição\n\n\nO Produto Escalar (produto interno) é uma operação matemática entre dois vetores em um espaço euclidiano que resulta em um escalar.\n\\[\n\\vec{u} = \\begin{pmatrix}\nu_1 \\\\\nu_2 \\\\\n\\vdots \\\\\nu_n\n\\end{pmatrix};\n\\vec{v} = \\begin{pmatrix}\nv_1 \\\\\nv_2 \\\\\n\\vdots \\\\\nv_n\n\\end{pmatrix}\n\\]\n\\[\\vec{u} \\cdot \\vec{v} = u_1 v_1 + u_2 v_2 + \\ldots + u_n v_n\\]"
-  },
-  {
-    "objectID": "comprimento_angulo.html#o-produto-escalar-1",
-    "href": "comprimento_angulo.html#o-produto-escalar-1",
-    "title": "Comprimento e ângulo: o produto escalar",
-    "section": "O Produto Escalar",
-    "text": "O Produto Escalar\nPropriedades\n\nSejam \\(\\vec{u}\\), \\(\\vec{v}\\) e \\(\\vec{w}\\) vetores em \\(\\mathbb{R}^n\\), e \\(k\\) um escalar. Então:\n\n\n\n\n\n\n\n\n\nPropriedade\nDescrição\n\n\n\n\n1\n\\(\\vec{u} \\cdot \\vec{v} = \\vec{v} \\cdot \\vec{u}\\)\nComutatividade\n\n\n2\n\\(\\vec{u} \\cdot (\\vec{v} + \\vec{w}) = \\vec{u} \\cdot \\vec{v} + \\vec{u} \\cdot \\vec{w}\\)\nDistributividade\n\n\n3\n\\(k(\\vec{u}) \\cdot \\vec{v} = k(\\vec{u} \\cdot \\vec{v})\\)\nDistributividade\n\n\n4\n\\(\\vec{u} \\cdot \\vec{u} \\ge 0\\) e \\(\\vec{u} \\cdot \\vec{u} = 0\\) se e somente se \\(\\vec{u} = 0\\)"
-  },
-  {
-    "objectID": "comprimento_angulo.html#o-produto-escalar-2",
-    "href": "comprimento_angulo.html#o-produto-escalar-2",
-    "title": "Comprimento e ângulo: o produto escalar",
-    "section": "O Produto Escalar",
-    "text": "O Produto Escalar\nExemplo\n\n\\[\n\\vec{u} = \\begin{pmatrix}\n1 \\\\\n2 \\\\\n-3\n\\end{pmatrix};\n\\vec{v} = \\begin{pmatrix}\n-3 \\\\\n5 \\\\\n2\n\\end{pmatrix}\n\\]\n\\[\\vec{u} \\cdot \\vec{v} = 1 \\times (-3) + 2 \\times 5 + (-3) \\times 2 = -3 + 10 - 6 = 1\\]"
-  },
-  {
-    "objectID": "comprimento_angulo.html#comprimento-de-um-vetor",
-    "href": "comprimento_angulo.html#comprimento-de-um-vetor",
-    "title": "Comprimento e ângulo: o produto escalar",
-    "section": "Comprimento de um vetor",
-    "text": "Comprimento de um vetor\n\nO comprimento de um vetor (magnitude ou norma), é uma medida da extensão do vetor no espaço. Para um vetor \\(\\vec{v} = (v_1, v_2, \\ldots, v_n)\\) em um espaço euclidiano n-dimensional, o comprimento é:\n\\[\n\\|\\vec{v}\\| = \\sqrt{\\vec{v} \\cdot \\vec{v}} = \\sqrt{v_1^2 + v_2^2 + \\cdots + v_n^2}\n\\]"
-  },
-  {
-    "objectID": "comprimento_angulo.html#comprimento-de-um-vetor-1",
-    "href": "comprimento_angulo.html#comprimento-de-um-vetor-1",
-    "title": "Comprimento e ângulo: o produto escalar",
-    "section": "Comprimento de um vetor",
-    "text": "Comprimento de um vetor\nPropriedades\n\nSeja \\(\\vec{u}\\) um vetor em \\(\\mathbb{R}^n\\), e \\(k\\) um escalar. Então:\n\n\n\n\nPropriedade\n\n\n\n\n1\n\\(\\|\\vec{u}\\|  = 0\\) se e somente se \\(\\vec{u} = 0\\)\n\n\n2\n\\(\\|k(\\vec{u})\\| = |k| \\|\\vec{u}\\|\\)"
-  },
-  {
-    "objectID": "comprimento_angulo.html#comprimento-de-um-vetor-2",
-    "href": "comprimento_angulo.html#comprimento-de-um-vetor-2",
-    "title": "Comprimento e ângulo: o produto escalar",
-    "section": "Comprimento de um vetor",
-    "text": "Comprimento de um vetor\nExemplo\n\n\\[\n\\vec{u} = \\begin{pmatrix}\n1 \\\\\n2 \\\\\n-3\n\\end{pmatrix};\n\\vec{v} = \\begin{pmatrix}\n-3 \\\\\n5 \\\\\n2\n\\end{pmatrix}\n\\]\n\\(\\|\\vec{u}\\| = \\sqrt{\\vec{u} \\cdot \\vec{u}} = \\sqrt{u_1^2 + u_2^2 + u_3^2}\\) \\(\\|\\vec{u}\\| = \\sqrt{1^2 + 2^2 + (-3)^2} = \\sqrt{1 + 4 + 9} = \\sqrt{14} \\approx 3.742\\)\n\\(\\|\\vec{v}\\| = \\sqrt{\\vec{v} \\cdot \\vec{v}} = \\sqrt{v_1^2 + v_2^2 + v_3^2}\\) \\(\\|\\vec{v}\\| = \\sqrt{(-3)^2 + 5^2 + 2^2} = \\sqrt{9 + 25 + 4} = \\sqrt{38} \\approx 6.164\\)"
-  },
-  {
-    "objectID": "comprimento_angulo.html#vetor-unitário-normalização",
-    "href": "comprimento_angulo.html#vetor-unitário-normalização",
-    "title": "Comprimento e ângulo: o produto escalar",
-    "section": "Vetor unitário: normalização",
-    "text": "Vetor unitário: normalização\n\nUm vetor é um vetor de comprimento 1 é chamado vetor unitário. \\(\\vec{v}\\) é unitário se \\(\\|\\vec{v}|\\ = 1\\)\nNormalização de um vetor\nDado qualquer vetor não nulo \\(\\vec{v}\\), podemos sempre encontrar um vetor unitário de mesmo sentido que \\(\\vec{v}\\) dividindo \\(\\vec{v}\\) por seu próprio comprimento (ou, equivalentemente, multiplicando por \\(\\frac{1}{\\|\\vec{v}\\|}\\)).\nPortanto o vetor \\(\\vec{u}\\) será unitário se:\n\\(\\vec{u} = \\left(\\frac{1}{\\|\\vec{v}\\|}\\right)\\vec{v}\\)\npois:\n\\[\n\\|\\vec{u}\\| = \\left\\|\\left(\\frac{1}{\\|\\vec{v}\\|}\\right)\\vec{v}\\right\\| = \\left| \\frac{1}{\\|\\vec{v}\\|} \\right| \\|\\vec{v}\\| = \\left(\\frac{1}{\\|\\vec{v}\\|}\\right)\\|\\vec{v}\\| = 1\n\\]\n\\(\\vec{u}\\) possui o mesmo sentido que \\(\\vec{v}\\), pois \\(\\frac{1}{\\|\\vec{v}\\|}\\) é um número positivo."
-  },
-  {
-    "objectID": "comprimento_angulo.html#distância",
-    "href": "comprimento_angulo.html#distância",
-    "title": "Comprimento e ângulo: o produto escalar",
-    "section": "Distância",
-    "text": "Distância\n\nA distância (ou distância euclideana) entre dois vetores \\(\\vec{u} = (u_1, u_2, \\ldots, u_n)\\) e \\(\\vec{v} = (v_1, v_2, \\ldots, v_n)\\) é uma medida da separação entre os dois pontos finais desses vetores no espaço n-dimensional, calculada:\n\\[\nd(\\vec{u}, \\vec{v}) = \\|\\vec{u} - \\vec{v}\\| = \\sqrt{(u_1 - v_1)^2 + (u_2 - v_2)^2 + \\cdots + (u_n - v_n)^2}\n\\]"
-  },
-  {
-    "objectID": "comprimento_angulo.html#distância-1",
-    "href": "comprimento_angulo.html#distância-1",
-    "title": "Comprimento e ângulo: o produto escalar",
-    "section": "Distância",
-    "text": "Distância\nExemplo\n\n\\[\n\\vec{u} = \\begin{pmatrix}\n\\sqrt{2} \\\\\n1 \\\\\n-1\n\\end{pmatrix};\n\\vec{v} = \\begin{pmatrix}\n0 \\\\\n2 \\\\\n-2\n\\end{pmatrix}\n\\]\n\\[\nd(\\vec{u}, \\vec{v}) = \\|\\vec{u} - \\vec{v}\\| = \\sqrt{(\\sqrt{2})^2 + (-1)^2 + 1^2} = \\sqrt{4} = 2\n\\]"
-  },
-  {
-    "objectID": "comprimento_angulo.html#ângulo-entre-dois-vetores",
-    "href": "comprimento_angulo.html#ângulo-entre-dois-vetores",
-    "title": "Comprimento e ângulo: o produto escalar",
-    "section": "Ângulo entre dois vetores",
-    "text": "Ângulo entre dois vetores\n\nO Produto escalar pod ser utilizado para determinar o ângulo \\(\\theta\\) entre dois vetores não mulos \\(\\vec{u}\\) e \\(\\vec{v}\\) por meio da expressão.\n\\[\n\\cos(\\theta) = \\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{u}\\|\\|\\vec{v}\\|}\n\\]"
-  },
-  {
-    "objectID": "comprimento_angulo.html#ângulo-entre-dois-vetores-1",
-    "href": "comprimento_angulo.html#ângulo-entre-dois-vetores-1",
-    "title": "Comprimento e ângulo: o produto escalar",
-    "section": "Ângulo entre dois vetores",
-    "text": "Ângulo entre dois vetores\n\n\n\n\n\n\n\nÂngulo e Lei dos Cossenos\n\n\nConsidere a expressão retirada da Lei dos Cossenos: \\[\n\\|\\vec{u} - \\vec{v}\\|^2 = \\|\\vec{u}\\|^2 + \\|\\vec{v}\\|^2 - 2\\|\\vec{u}\\|\\|\\vec{v}\\|\\cos(\\theta)\n\\]\nExpandindo \\(\\|\\vec{u} - \\vec{v}\\|^2\\) e utilizando a definição do produto escalar, podemos escrever:\n\\[\n\\|\\vec{u} - \\vec{v}\\|^2 = (\\vec{u} - \\vec{v}) \\cdot (\\vec{u} - \\vec{v})  = \\vec{u} \\cdot \\vec{u} - 2\\vec{u} \\cdot \\vec{v} + \\vec{v} \\cdot \\vec{v}\n\\]\nComo \\(\\vec{u} \\cdot \\vec{u} = \\|\\vec{u}\\|^2\\) e \\(\\vec{v} \\cdot \\vec{v} = \\|\\vec{v}\\|^2\\), então:\n\\[\n\\|\\vec{u} - \\vec{v}\\|^2 = \\|\\vec{u}\\|^2 + \\|\\vec{v}\\|^2 - 2\\vec{u} \\cdot \\vec{v}\n\\]\nComparando esta expressão com a expressão original da Lei dos Cossenos, temos:\n\\[\n\\|\\vec{u}\\|^2 + \\|\\vec{v}\\|^2 - 2\\|\\vec{u}\\|\\|\\vec{v}\\|\\cos(\\theta) = \\|\\vec{u}\\|^2 + \\|\\vec{v}\\|^2 - 2\\vec{u} \\cdot \\vec{v}\n\\]\nSimplificando, obtemos:\n\\[\n- 2\\|\\vec{u}\\|\\|\\vec{v}\\|\\cos(\\theta) = - 2\\vec{u} \\cdot \\vec{v}\n\\]\nDividindo ambos os lados por \\(-2\\|\\vec{u}\\|\\|\\vec{v}\\|\\):\n\\[\n\\cos(\\theta) = \\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{u}\\|\\|\\vec{v}\\|}\n\\]"
-  },
-  {
-    "objectID": "comprimento_angulo.html#vetores-ortogonais",
-    "href": "comprimento_angulo.html#vetores-ortogonais",
-    "title": "Comprimento e ângulo: o produto escalar",
-    "section": "Vetores ortogonais",
-    "text": "Vetores ortogonais\nDois vetores \\(\\vec{u}\\) e \\(\\vec{v}\\) são ortogonais entre si se \\(\\vec{u} \\cdot \\vec{v} = 0\\). Dois vetores não nulos ortogonais têm ângulo \\(\\theta\\) entre si \\(\\theta = 90^o\\) (\\(\\theta = \\frac{\\pi}{2}\\) radianos)"
-  },
-  {
-    "objectID": "comprimento_angulo.html#vetores-ortogonais-1",
-    "href": "comprimento_angulo.html#vetores-ortogonais-1",
-    "title": "Comprimento e ângulo: o produto escalar",
-    "section": "Vetores ortogonais",
-    "text": "Vetores ortogonais\n\nExemplo: Considere os vetores \\(\\vec{u} = (2, 3)\\) e \\(\\vec{v} = (-3, 2)\\) em \\(\\mathbb{R}^2\\). Para verificar se são ortogonais:\n\nCalcular o produto escalar \\(\\vec{u} \\cdot \\vec{v}\\):\n\n\\[\n\\vec{u} \\cdot \\vec{v} = 2 \\cdot (-3) + 3 \\cdot 2 = -6 + 6 = 0\n\\]\n\nCalcular as normas \\(\\|\\vec{u}\\|\\) e \\(\\|\\vec{v}\\|\\):\n\n\\[\n\\|\\vec{u}\\| = \\sqrt{2^2 + 3^2} = \\sqrt{4 + 9} = \\sqrt{13}\n\\]\n\\[\n\\|\\vec{v}\\| = \\sqrt{(-3)^2 + 2^2} = \\sqrt{9 + 4} = \\sqrt{13}\n\\]\n\nCalcular \\(\\cos(\\theta)\\):\n\n\\[\n\\cos(\\theta) = \\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{u}\\|\\|\\vec{v}\\|} = \\frac{0}{\\sqrt{13} \\cdot \\sqrt{13}} = 0\n\\]\n\nCalcular \\(\\theta\\):\n\n\\[\n\\theta = \\cos^{-1}(0) = \\frac{\\pi}{2}\n\\]\n\n\n\n\n\nBICT Mar - Unifesp"
-  },
-  {
-    "objectID": "geometria_vetores.html#conteúdo-da-aula",
-    "href": "geometria_vetores.html#conteúdo-da-aula",
-    "title": "A Geometria e a Álgebra de Vetores",
-    "section": "Conteúdo da aula",
-    "text": "Conteúdo da aula\n\nDefinição de Vetores\nVetores no Plano Cartesiano\nIgualdade de Vetores\nSoma de vetores\nMultiplicação de um vetor por um escalar\nVetores em \\(\\mathbb{R}^3\\)\nVetores em \\(\\mathbb{R}^n\\)\nPropriedades Algébricas dos Vetores"
-  },
-  {
-    "objectID": "geometria_vetores.html#vetores",
-    "href": "geometria_vetores.html#vetores",
-    "title": "A Geometria e a Álgebra de Vetores",
-    "section": "Vetores",
-    "text": "Vetores\n\n\n\n\n\n\nDefinição\n\n\nSegmento de reta orientado que representa o deslocamento do ponto de origem até um ponto de destino. O vetor de A até B é denotado por \\(\\mathbf{AB}\\), ou \\(\\vec{AB}\\). O ponto A é chamado de ponto inicial (ou origem) do vetor, enquanto o ponto B é chamado de ponto final (ou extremidade). Frequentemente, um vetor é representado por letra minúscula em negrito, como \\(\\mathbf{v}\\) ou ainda por \\(\\vec{v}\\).\n\nComprimento: distância entre o ponto inicial e o ponto final do vetor.\nDireção: orientação do vetor no espaço, definida pelo ângulo que faz com os eixos coordenados."
-  },
-  {
-    "objectID": "geometria_vetores.html#vetores-no-plano-cartesiano",
-    "href": "geometria_vetores.html#vetores-no-plano-cartesiano",
-    "title": "A Geometria e a Álgebra de Vetores",
-    "section": "Vetores no Plano Cartesiano",
-    "text": "Vetores no Plano Cartesiano\n\n\n\n\nO ponto \\(A\\) pode ser representado pelo vetor posição que tem início na origem \\(O\\) e termina no ponto \\(A\\).\nAs coordenadas dos vetores são chamadas de componentes do vetor\n\n\\(\\vec{a} = [-9, 4]\\),\n\\(\\vec{b} = [-4, 10]\\),\n\\(\\cdots\\)\n\\(\\vec{e} = [8, -8]\\)"
-  },
-  {
-    "objectID": "geometria_vetores.html#vetores-no-plano-cartesiano-1",
-    "href": "geometria_vetores.html#vetores-no-plano-cartesiano-1",
-    "title": "A Geometria e a Álgebra de Vetores",
-    "section": "Vetores no Plano Cartesiano",
-    "text": "Vetores no Plano Cartesiano\n\n\n\n\nUm vetor pode ter origem no ponto A e destino no ponto B.\n\n\\(\\vec{AB} = B - A = [-4, 10] - [-9,4] = [5, 6]\\)\n\\(\\vec{CB} = B - C = [-4, 10] - [-1,-3] = [3, 13]\\)\n\\(\\vec{DE} = E - D = [8, -8] - [4,8] = [4, -16]\\)"
-  },
-  {
-    "objectID": "geometria_vetores.html#igualdade-de-vetores",
-    "href": "geometria_vetores.html#igualdade-de-vetores",
-    "title": "A Geometria e a Álgebra de Vetores",
-    "section": "Igualdade de Vetores",
-    "text": "Igualdade de Vetores\n\n\n\nConsidere:\n\\(A = [-4, -2]\\)\n\\(B = [4, 6]\\)\n\\(C = [-3, -6]\\)\n\\(D = [5, 2]\\)\n\\(E = [-9, 2]\\)\n\\(F = [3, 8]\\)"
-  },
-  {
-    "objectID": "geometria_vetores.html#igualdade-de-vetores-1",
-    "href": "geometria_vetores.html#igualdade-de-vetores-1",
-    "title": "A Geometria e a Álgebra de Vetores",
-    "section": "Igualdade de Vetores",
-    "text": "Igualdade de Vetores\n\n\n\nSejam:\n\\(\\vec{AB} = B - A = [4, 6] - [-4, -2] = [8, 8]\\)\n\\(\\vec{CD} = D - C = [5, 2] - [-3, -6] = [8, 8]\\)\n\\(\\vec{EF} = F - E = [3, 8] - [-9, 2] = [11, 6]\\)\nEntão:\n\\(\\vec{AB} = \\vec{CD} \\ne \\vec{EF}\\)\n\n\n\n\n\n\nNote\n\n\n\\(\\vec{AB} \\ne \\vec{BA}\\)\n\\(\\vec{BA} = A - B = [-4, -2] - [4, 6] = [-8, -8]\\)"
-  },
-  {
-    "objectID": "geometria_vetores.html#soma-de-vetores",
-    "href": "geometria_vetores.html#soma-de-vetores",
-    "title": "A Geometria e a Álgebra de Vetores",
-    "section": "Soma de vetores",
-    "text": "Soma de vetores\n\n\n\n\\(\\vec{u} = [u_1, u_2]\\), \\(\\vec{v} = [v_1, v_2]\\)\n\\(\\vec{u} + \\vec{v} = [u_1, u_2] + [v_1, v_2] = [u_1 + v_1, u_2 + v_2]\\)\n\n\\(\\vec{u} = [1, 2]\\), \\(\\vec{v} = [5, 3]\\)\n\\(\\vec{u} + \\vec{v} = [1, 2] + [5, 3] = [1 + 5, 2 + 3]\\)\n\\(\\vec{u} + \\vec{v} = [6, 5]\\)"
-  },
-  {
-    "objectID": "geometria_vetores.html#multiplicação-de-um-vetor-por-um-escalar",
-    "href": "geometria_vetores.html#multiplicação-de-um-vetor-por-um-escalar",
-    "title": "A Geometria e a Álgebra de Vetores",
-    "section": "Multiplicação de um vetor por um escalar",
-    "text": "Multiplicação de um vetor por um escalar\n\n\n\nSeja um escalar \\(k\\) e um vetor \\(\\vec{v}\\):\n\\(k \\vec{v} = k [v_1, v_2] = [kv_1, kv_2]\\)\nPara \\(\\vec{v} = [-2, 4]\\):\n\\(2 \\vec{v} = [2(-2), 2(4)] = [-4, 8]\\)\n\\(\\frac{1}{2} \\vec{v} = [\\frac{1}{2} (-2), \\frac{1}{2} (4)] = [-1, 2]\\)\n\\(-2 \\vec{v} = [-2(-2), -2(4)] = [4,- 8]\\)"
-  },
-  {
-    "objectID": "geometria_vetores.html#vetores-em-mathbbr3",
-    "href": "geometria_vetores.html#vetores-em-mathbbr3",
-    "title": "A Geometria e a Álgebra de Vetores",
-    "section": "Vetores em \\(\\mathbb{R}^3\\)",
-    "text": "Vetores em \\(\\mathbb{R}^3\\)\nO conjunto de todas as triplas ordenadas de números reais é denotado por \\(\\mathbb{R}^3\\).\n\n\\(\\vec{v} = [v_1, v_2, v_3]\\)\n\nTodas as definições de \\(\\mathbb{R}^2\\) valem para \\(\\mathbb{R}^3\\)."
-  },
-  {
-    "objectID": "geometria_vetores.html#vetores-em-mathbbrn",
-    "href": "geometria_vetores.html#vetores-em-mathbbrn",
-    "title": "A Geometria e a Álgebra de Vetores",
-    "section": "Vetores em \\(\\mathbb{R}^n\\)",
-    "text": "Vetores em \\(\\mathbb{R}^n\\)\n\nEm \\(\\mathbb{R}^n\\), o conjunto de todas as n-uplas ordenadas de números reais, os vetores podem ser representados como linhas ou colunas, com suas entradas denominadas componentes.\n\n\n\\(\\vec{v} = [v_1, v_2, \\ldots, v_n]\\)\n\n\nAs operações de adição de vetores e multiplicação por escalar são definidas de maneira natural. Por exemplo, para os vetores \\(\\vec{u} = [u_1, u_2, \\ldots, u_n]\\) e \\(\\vec{v} = [v_1, v_2, \\ldots, v_n]\\), a i-ésima componente de \\(\\vec{u} + \\vec{v}\\) é \\(u_i + v_i\\), e a i-ésima componente de \\(k\\vec{v}\\) é \\(kv_i\\)."
-  },
-  {
-    "objectID": "geometria_vetores.html#propriedades-algébricas-de-vetores-em-mathbbrn",
-    "href": "geometria_vetores.html#propriedades-algébricas-de-vetores-em-mathbbrn",
-    "title": "A Geometria e a Álgebra de Vetores",
-    "section": "Propriedades Algébricas de Vetores em \\(\\mathbb{R}^n\\)",
-    "text": "Propriedades Algébricas de Vetores em \\(\\mathbb{R}^n\\)\n\nSejam \\(\\vec{u}\\), \\(\\vec{v}\\) e \\(\\vec{w}\\) vetores em \\(\\mathbb{R}^n\\), e \\(k\\) e \\(l\\) escalares. Então:\n\n\n\n\n\n\n\n\n\nPropriedade\nDescrição\n\n\n\n\n1\n\\(\\vec{u} + \\vec{v} = \\vec{v} + \\vec{u}\\)\nComutatividade\n\n\n2\n\\((\\vec{u} + \\vec{v}) + \\vec{w} = \\vec{u} + (\\vec{v} + \\vec{w})\\)\nAssociatividade\n\n\n3\n\\(\\vec{u} + \\vec{0} = \\vec{u}\\)\n\n\n\n4\n\\(\\vec{u} + (-\\vec{u}) = \\vec{0}\\)\n\n\n\n5\n\\(k(\\vec{u} + \\vec{v}) = k\\vec{u} + k\\vec{v}\\)\nDistributividade\n\n\n6\n\\((k + l)\\vec{u} = k\\vec{u} + l\\vec{u}\\)\nDistributividade\n\n\n7\n\\(k(l\\vec{u}) = (kl)\\vec{u}\\)\n\n\n\n8\n\\(1\\vec{u} = \\vec{u}\\)"
-  },
-  {
-    "objectID": "geometria_vetores.html#combinações-lineares",
-    "href": "geometria_vetores.html#combinações-lineares",
-    "title": "A Geometria e a Álgebra de Vetores",
-    "section": "Combinações Lineares",
-    "text": "Combinações Lineares\n\nUma combinação linear de vetores é um vetor obtido como a soma ponderada de outros vetores, onde cada vetor é multiplicado por um escalar.\n\n\n\n\n\n\nDefinição\n\n\nFormalmente, um vetor \\(\\vec{v}\\) é dito ser uma combinação linear dos vetores \\(\\vec{v}_1, \\vec{v}_2, \\ldots, \\vec{v}_k\\) se existirem escalares \\(c_1, c_2, \\ldots, c_k\\) tais que:\n\\[\\vec{v} = c_1 \\vec{v}_1 + c_2 \\vec{v}_2 + \\cdots + c_k \\vec{v}_k\\]\n\n\n\nOs escalares \\(c_1, c_2, \\ldots, c_k\\) são chamados de coeficientes da combinação linear. Em outras palavras, \\(\\vec{v}\\) é construído a partir dos vetores \\(\\vec{v}_1, \\vec{v}_2, \\ldots, \\vec{v}_k\\) pela combinação dos seus múltiplos escalares. Essa definição é fundamental na álgebra linear, pois permite a construção de vetores em um espaço vetorial a partir de uma base de vetores dados."
-  },
-  {
-    "objectID": "geometria_vetores.html#combinações-lineares-1",
-    "href": "geometria_vetores.html#combinações-lineares-1",
-    "title": "A Geometria e a Álgebra de Vetores",
-    "section": "Combinações Lineares",
-    "text": "Combinações Lineares\n\nConsidere os vetores \\(\\vec{v}_1 = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\\) e \\(\\vec{v}_2 = \\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix}\\) no espaço \\(\\mathbb{R}^2\\) e os escalares \\(c_1 = 2\\) e \\(c_2 = -1\\).\n\\[\\vec{v} = c_1 \\vec{v}_1 + c_2 \\vec{v}_2\\]\n\\(\\vec{v} = 2 \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix} + (-1) \\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix} = \\begin{pmatrix} 2 \\cdot 1 \\\\ 2 \\cdot 2 \\end{pmatrix} + \\begin{pmatrix} -1 \\cdot 3 \\\\ -1 \\cdot 4 \\end{pmatrix} = \\begin{pmatrix} 2 \\\\ 4 \\end{pmatrix} + \\begin{pmatrix} -3 \\\\ -4 \\end{pmatrix} = \\begin{pmatrix} 2 - 3 \\\\ 4 - 4 \\end{pmatrix} = \\begin{pmatrix} -1 \\\\ 0 \\end{pmatrix}\\)\nPortanto, o vetor \\(\\vec{v} = \\begin{pmatrix} -1 \\\\ 0 \\end{pmatrix}\\) é uma combinação linear dos vetores \\(\\vec{v}_1\\) e \\(\\vec{v}_2\\) com os coeficientes dados \\(c_1 = 2\\) e \\(c_2 = -1\\).\n\n\n\n\n\n\n\nNote\n\n\nPara visualizar a ideia de combinações lineares, acesse o GeoGebra.\n\n\n\n\n\n\n\nBICT Mar - Unifesp"
-  },
-  {
-    "objectID": "matrizes.html#conteúdo-da-aula",
-    "href": "matrizes.html#conteúdo-da-aula",
-    "title": "Matrizes",
-    "section": "Conteúdo da aula",
-    "text": "Conteúdo da aula\n\nDefinição de matriz\nAdição de matrizes\nMultiplicação por um escalar\nMultiplicação de matrizes\nTransposta de uma matriz\nÁlgebra de matrizes\nInversa de uma matriz\nInversa de uma matriz pelo método de Gauss-Jordan\nMatrizes elementares\nCadeias de Markov para Recifes de Coral"
-  },
-  {
-    "objectID": "matrizes.html#definição-de-matriz",
-    "href": "matrizes.html#definição-de-matriz",
-    "title": "Matrizes",
-    "section": "Definição de matriz",
-    "text": "Definição de matriz\n\\[A_{22} = \\begin{bmatrix}\n1 & 2 \\\\\n3 & 4\n\\end{bmatrix};\nB_{33} = \\begin{bmatrix}\n5 & 6 & 7 \\\\\n8 & 9 & 10 \\\\\n11 & 12 & 13\n\\end{bmatrix}; C_{34} = \\begin{bmatrix}\n14 & 15 & 16 & 17 \\\\\n18 & 19 & 20 & 21 \\\\\n22 & 23 & 24 & 25\n\\end{bmatrix}\\]\n\nEstrutura geral: Para uma matriz \\(m \\times n\\), \\(A = [a_{ij}]\\)\n\\[A_{mn} = \\begin{bmatrix}\na_{11} & a_{12} & \\cdots & a_{1n} \\\\\na_{21} & a_{22} & \\cdots & a_{2n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m1} & a_{m2} & \\cdots & a_{mn}\n\\end{bmatrix}\\]"
-  },
-  {
-    "objectID": "matrizes.html#adição-de-matrizes",
-    "href": "matrizes.html#adição-de-matrizes",
-    "title": "Matrizes",
-    "section": "Adição de matrizes",
-    "text": "Adição de matrizes\n\n\n\n\\(A = \\begin{bmatrix}\n1 & 4 & 7 \\\\\n2 & 5 & 8 \\\\\n3 & 6 & 9\n\\end{bmatrix}; B = \\begin{bmatrix}\n9 & 8 & 7 \\\\\n6 & 5 & 4 \\\\\n3 & 2 & 1\n\\end{bmatrix}\\)\n\n\\(A + B = \\begin{bmatrix}\n1 + 9 & 4 + 8 & 7 + 7 \\\\\n2 + 6 & 5 + 5 & 8 + 4 \\\\\n3 + 3 & 6 + 2 & 9 + 1\n\\end{bmatrix}\n= \\begin{bmatrix}\n10 & 12 & 14 \\\\\n8 & 10 & 12 \\\\\n6 & 8 & 10\n\\end{bmatrix}\\)\n\n\n\nEstrutura Geral: Para duas matrizes \\(m \\times n\\), \\(A = [a_{ij}]\\) e \\(B = [b_{ij}]\\):\n\\[A + B = [a_{ij} + b_{ij}] = \\begin{bmatrix}\na_{11} + b_{11} & a_{12} + b_{12} & \\cdots & a_{1n} + b_{1n} \\\\\na_{21} + b_{21} & a_{22} + b_{22} & \\cdots & a_{2n} + b_{2n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m1} + b_{m1} & a_{m2} + b_{m2} & \\cdots & a_{mn} + b_{mn}\n\\end{bmatrix}\\]"
-  },
-  {
-    "objectID": "matrizes.html#multiplicação-por-um-escalar",
-    "href": "matrizes.html#multiplicação-por-um-escalar",
-    "title": "Matrizes",
-    "section": "Multiplicação por um escalar",
-    "text": "Multiplicação por um escalar\n\n\n\nSeja \\(A\\) uma matriz \\(3 \\times 3\\):\n\\(A = \\begin{bmatrix}\n1 & 4 & 7 \\\\\n2 & 5 & 8 \\\\\n3 & 6 & 9\n\\end{bmatrix}\\)\n\nA multiplicação de \\(A\\) por um escalar \\(c = 3\\):\n\\(cA = 3 \\times \\begin{bmatrix}\n1 & 4 & 7 \\\\\n2 & 5 & 8 \\\\\n3 & 6 & 9\n\\end{bmatrix}\n= \\begin{bmatrix}\n3 \\times 1 & 3 \\times 4 & 3 \\times 7 \\\\\n3 \\times 2 & 3 \\times 5 & 3 \\times 8 \\\\\n3 \\times 3 & 3 \\times 6 & 3 \\times 9\n\\end{bmatrix}\n= \\begin{bmatrix}\n3 & 12 & 21 \\\\\n6 & 15 & 24 \\\\\n9 & 18 & 27\n\\end{bmatrix}\\)\n\n\n\nEstrutura Geral: Para uma matriz \\(m \\times n\\), \\(A = [a_{ij}]\\) e um escalar \\(c\\):\n\\[cA = [c \\times a_{ij}] = \\begin{bmatrix}\nc \\times a_{11} & c \\times a_{12} & \\cdots & c \\times a_{1n} \\\\\nc\\times a_{21} & c \\times a_{22} & \\cdots & c \\times a_{2n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\nc \\times a_{m1} & c \\times a_{m2} & \\cdots & c \\times a_{mn}\n\\end{bmatrix}\\]"
-  },
-  {
-    "objectID": "matrizes.html#multiplicação-de-matrizes",
-    "href": "matrizes.html#multiplicação-de-matrizes",
-    "title": "Matrizes",
-    "section": "Multiplicação de matrizes",
-    "text": "Multiplicação de matrizes\n\n\n\nSeja \\(A\\) uma matriz \\(2 \\times 3\\):\n\\(A = \\begin{bmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6\n\\end{bmatrix}\\)\ne \\(B\\) uma matriz \\(3 \\times 2\\):\n\\(B = \\begin{bmatrix}\n7 & 8 \\\\\n9 & 10 \\\\\n11 & 12\n\\end{bmatrix}\\)\n\nA multiplicação de \\(A\\) por \\(B\\):\n\\(AB = \\begin{bmatrix}\n1 \\cdot 7 + 2 \\cdot 9 + 3 \\cdot 11 & 1 \\cdot 8 + 2 \\cdot 10 + 3 \\cdot 12 \\\\\n4 \\cdot 7 + 5 \\cdot 9 + 6 \\cdot 11 & 4 \\cdot 8 + 5 \\cdot 10 + 6 \\cdot 12\n\\end{bmatrix}\n= \\begin{bmatrix}\n58 & 64 \\\\\n139 & 154\n\\end{bmatrix}\\)\n\n\n\nEstrutura Geral: Para uma matriz \\(m \\times n\\), \\(A = [a_{ij}]\\), e uma matriz \\(n \\times p\\), \\(B = [b_{ij}]\\):\n\\[AB = [c_{ij}] = \\begin{bmatrix}\n\\sum_{k=1}^{n} a_{1k} b_{k1} & \\sum_{k=1}^{n} a_{1k} b_{k2} & \\cdots & \\sum_{k=1}^{n} a_{1k} b_{kp} \\\\\n\\sum_{k=1}^{n} a_{2k} b_{k1} & \\sum_{k=1}^{n} a_{2k} b_{k2} & \\cdots & \\sum_{k=1}^{n} a_{2k} b_{kp} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\sum_{k=1}^{n} a_{mk} b_{k1} & \\sum_{k=1}^{n} a_{mk} b_{k2} & \\cdots & \\sum_{k=1}^{n} a_{mk} b_{kp}\n\\end{bmatrix}\\]"
-  },
-  {
-    "objectID": "matrizes.html#multiplicação-de-matrizes-1",
-    "href": "matrizes.html#multiplicação-de-matrizes-1",
-    "title": "Matrizes",
-    "section": "Multiplicação de matrizes",
-    "text": "Multiplicação de matrizes\nPropriedades Algébricas da Multiplicação de Matrizes\n\nSejam \\(A\\), \\(B\\) e \\(C\\) matrizes (cujas ordens possibilitem que as operações indicadas sejam realizadas) e seja \\(k\\) um escalar. Então:\n\n\n\n\n\n\n\n\n\nPropriedade\nDescrição\n\n\n\n\n1\n\\(A(BC) = (AB)C\\)\nAssociatividade\n\n\n2\n\\(A(B + C) = AB + AC\\)\nDistributiva à esquerda\n\n\n3\n\\((A + B)C = AC + BC\\)\nDistributiva à direita\n\n\n4\n\\(k(AB) = (kA)B = A(kB)\\)\n\n\n\n5\n\\(I_m A = A = A I_n\\) se \\(A\\) for \\(m \\times n\\)\nIdentidade da multiplicação"
-  },
-  {
-    "objectID": "matrizes.html#transposta-de-uma-matriz",
-    "href": "matrizes.html#transposta-de-uma-matriz",
-    "title": "Matrizes",
-    "section": "Transposta de uma matriz",
-    "text": "Transposta de uma matriz\n\n\n\nSeja \\(A\\) uma matriz \\(2 \\times 3\\):\n\\(A = \\begin{bmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6\n\\end{bmatrix}\\)\n\nA transposta de \\(A\\) é dada por \\(A^T = [a_{ij}]^T = [a_{ji}]\\):\n\\(A^T = \\begin{bmatrix}\n1 & 4 \\\\\n2 & 5 \\\\\n3 & 6\n\\end{bmatrix}\\)\n\n\n\nEstrutura Geral: Para uma matriz \\(m \\times n\\), \\(A = [a_{ij}]\\):\n\n\n\\(A = [a_{ij}] = \\begin{bmatrix}\na_{11} & a_{21} & \\cdots & a_{m1} \\\\\na_{12} & a_{22} & \\cdots & a_{m2} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{1n} & a_{2n} & \\cdots & a_{mn}\n\\end{bmatrix}\\)\n\n\\(A^T = [a_{ji}] = \\begin{bmatrix}\na_{11} & a_{21} & \\cdots & a_{n1} \\\\\na_{12} & a_{22} & \\cdots & a_{n2} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{1m} & a_{2m} & \\cdots & a_{nm}\n\\end{bmatrix}\\)"
-  },
-  {
-    "objectID": "matrizes.html#transposta-de-uma-matriz-1",
-    "href": "matrizes.html#transposta-de-uma-matriz-1",
-    "title": "Matrizes",
-    "section": "Transposta de uma matriz",
-    "text": "Transposta de uma matriz\nPropriedades Algébricas da Transposta de Matrizes\n\nSejam \\(A\\) e \\(B\\) matrizes (cujas ordens são tais que as operações indicadas podem ser realizadas) e seja \\(k\\) um escalar. Então:\n\n\n\n\nPropriedade\n\n\n\n\n1\n\\((A^T)^T = A\\)\n\n\n2\n\\((A + B)^T = A^T + B^T\\)\n\n\n3\n\\((kA)^T = k(A^T)\\)\n\n\n4\n\\((AB)^T = B^T A^T\\)\n\n\n5\n\\((A^r)^T = (A^T)^r\\) para todos os inteiros \\(r\\) não negativos"
-  },
-  {
-    "objectID": "matrizes.html#álgebra-de-matrizes",
-    "href": "matrizes.html#álgebra-de-matrizes",
-    "title": "Matrizes",
-    "section": "Álgebra de matrizes",
-    "text": "Álgebra de matrizes\nPropriedades Algébricas da Adição de Matrizes e da Multiplicação por Escalar\n\nSejam \\(A\\), \\(B\\) e \\(C\\) matrizes de mesma ordem, e \\(c\\) e \\(d\\) escalares. Então:\n\n\n\n\nPropriedade\nDescrição\n\n\n\n\n1\n\\(A + B = B + A\\)\nComutatividade\n\n\n2\n\\((A + B) + C = A + (B + C)\\)\nAssociatividade\n\n\n3\n\\(A + O = A\\)\n\n\n\n4\n\\(A + (-A) = O\\)\n\n\n\n5\n\\(c(A + B) = cA + cB\\)\nDistributividade\n\n\n6\n\\((c + d)A = cA + dA\\)\nDistributividade\n\n\n7\n\\(c(dA) = (cd)A\\)\n\n\n\n8\n\\(1A = A\\)"
-  },
-  {
-    "objectID": "matrizes.html#combinações-lineares-em-matrizes",
-    "href": "matrizes.html#combinações-lineares-em-matrizes",
-    "title": "Matrizes",
-    "section": "Combinações lineares em matrizes",
-    "text": "Combinações lineares em matrizes\n\nEscrevendo a matriz \\(B = \\begin{bmatrix} 1 & 4 \\\\ 2 & 1 \\end{bmatrix}\\) como combinação linear de \\(A_1 = \\begin{bmatrix} 0 & 1 \\\\ -1 & 0 \\end{bmatrix}\\), \\(A_2 = \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}\\) e \\(A_3 = \\begin{bmatrix} 1 & 1 \\\\ 1 & 1  \\end{bmatrix}\\)\ntemos\n\\[c_1A_1 + c_2A_2 + c_3A_3 = B\\]\n\\[c_1\\begin{bmatrix}\n0 & 1 \\\\\n-1 & 0\n\\end{bmatrix} +\nc_2\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix} +\nc_3\\begin{bmatrix}\n1 & 1 \\\\\n1 & 1\n\\end{bmatrix} =\n\\begin{bmatrix}\n1 & 4 \\\\\n2 & 1\n\\end{bmatrix}\\]\n\n\n\n\n\nA combinção linear pode ser resolvida pelo sistema:\n\\[\n\\begin{cases}\nc_2 + c_3 = 1 \\\\\nc_1 + c_3 = 4 \\\\\n-c_1 + c_3 = 2 \\\\\nc_2 + c_3 = 1\n\\end{cases}\n\\]\n\nQue tem solução:\n\\[c_1 = 1\\] \\[c_2 = -2\\] \\[c_3 = 3\\]"
-  },
-  {
-    "objectID": "matrizes.html#inversa-de-uma-matriz",
-    "href": "matrizes.html#inversa-de-uma-matriz",
-    "title": "Matrizes",
-    "section": "Inversa de uma matriz",
-    "text": "Inversa de uma matriz\n\n\n\nSeja \\(A = \\begin{bmatrix}\n2 & 3 \\\\\n1 & 4\n\\end{bmatrix}\\) e \\(A^{-1} = \\begin{bmatrix}\n\\frac{4}{5} & -\\frac{3}{5} \\\\\n-\\frac{1}{5} & \\frac{2}{5}\n\\end{bmatrix}\\)\n\nVerificamos que \\(A^{-1}\\) é inversa de \\(A\\) pois:\n\\(AA^{-1} = \\begin{bmatrix}\n2 & 3 \\\\\n1 & 4\n\\end{bmatrix}\n\\begin{bmatrix}\n\\frac{4}{5} & -\\frac{3}{5} \\\\\n-\\frac{1}{5} & \\frac{2}{5}\n\\end{bmatrix} = \\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix} = I\\)\ne\n\\(A^{-1}A = \\begin{bmatrix}\n\\frac{4}{5} & -\\frac{3}{5} \\\\\n-\\frac{1}{5} & \\frac{2}{5}\n\\end{bmatrix}\n\\begin{bmatrix}\n2 & 3 \\\\\n1 & 4\n\\end{bmatrix} = \\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix} = I\\)\n\n\n\n\n\n\n\n\n\nDefinição\n\n\nSe \\(A\\) é uma matriz \\(n \\times n\\), uma inversa de \\(A\\) é uma matriz \\(n \\times n\\) \\(A^{-1}\\) que satisfaz:\n\\[AA^{-1} = I\\] e \\[A^{-1}A = I\\]\nsendo \\(I = I_n\\) a matriz identidade \\(n \\times n\\). Se existir uma matriz \\(A^{-1}\\) assim, diremos que \\(A\\) é invertível."
-  },
-  {
-    "objectID": "matrizes.html#inversa-de-uma-matriz-1",
-    "href": "matrizes.html#inversa-de-uma-matriz-1",
-    "title": "Matrizes",
-    "section": "Inversa de uma matriz",
-    "text": "Inversa de uma matriz\nEm cada exemplo, verifique se a matriz \\(B\\) é inversa de \\(A\\)\n\n\n\n\n\n\\(A = \\begin{bmatrix}\n1 & 2 \\\\\n3 & 4\n\\end{bmatrix}\\) e \\(B = \\begin{bmatrix}\n-2 & 1 \\\\\n1.5 & -0.5\n\\end{bmatrix}\\)\n\n\n\n\\(A = \\begin{bmatrix}\n2 & 5 \\\\\n1 & 3\n\\end{bmatrix}\\) e \\(B = \\begin{bmatrix}\n3 & -5 \\\\\n-1 & 1\n\\end{bmatrix}\\)\n\n\n\n\n\n\n\\(A = \\begin{bmatrix}\n2 & 1 & 1 \\\\\n1 & 3 & 2 \\\\\n1 & 0 & 0\n\\end{bmatrix}\\) e \\(B = \\begin{bmatrix}\n0 & 0 & 1 \\\\\n-2 & 1 & 3 \\\\\n3 & -1 & -5\n\\end{bmatrix}\\)\n\n\n\n\\(A = \\begin{bmatrix}\n1 & 2 & 3 \\\\\n0 & 1 & 4 \\\\\n5 & 6 & 0\n\\end{bmatrix}\\) e \\(B = \\begin{bmatrix}\n4 & 2 & -2 \\\\\n-1 & 3 & 5 \\\\\n0 & 5 & 1\n\\end{bmatrix}\\)"
-  },
-  {
-    "objectID": "matrizes.html#inversa-de-uma-matriz-2",
-    "href": "matrizes.html#inversa-de-uma-matriz-2",
-    "title": "Matrizes",
-    "section": "Inversa de uma matriz",
-    "text": "Inversa de uma matriz\n\n\n\nVerifique que \\(A = \\begin{bmatrix}\n2 & 5 \\\\\n1 & 3\n\\end{bmatrix}\\) invertível e pode ser escrita por:\n\\(\\begin{bmatrix}\n2 & 5 \\\\\n1 & 3\n\\end{bmatrix}\n\\begin{bmatrix}\nw & x \\\\\ny & z\n\\end{bmatrix} =\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\\)\n\nQue resulta no sistema de equações:\n\\(\\begin{cases}\n2w + 5y = 1 \\\\\n2x + 5z = 0 \\\\\nw + 3y = 0 \\\\\nx + 3z = 1\n\\end{cases}\\)\n\n\n\n\nQue pode ser resolvido por:\n\\(\\left[ \\begin{array}{cccc|c}\n2 & 0 & 5 & 0 & 1\\\\\n0 & 2 & 0 & 5 & 0\\\\\n1 & 0 & 3 & 0 & 0\\\\\n0 & 1 & 0 & 3 & 1\n\\end{array} \\right]\\) \\(\\begin{array}{c}\nL_1 \\leftrightarrow L_3\\\\\nL_2 \\leftrightarrow L_4\\\\\n\\\\\n\\\\\n\\end{array}\\) \\(\\left[ \\begin{array}{cccc|c}\n1 & 0 & 3 & 0 & 0\\\\\n0 & 1 & 0 & 3 & 1\\\\\n2 & 0 & 5 & 0 & 1\\\\\n0 & 2 & 0 & 5 & 0\n\\end{array} \\right]\\) \\(\\begin{array}{c}\n\\\\\n\\\\\nL_3 - 2L_1 \\\\\nL_4 - 2L_2 \\\\\n\\end{array}\\) \\(\\left[ \\begin{array}{cccc|c}\n1 & 0 & 3 & 0 & 0\\\\\n0 & 1 & 0 & 3 & 1\\\\\n0 & 0 & -1 & 0 & 1\\\\\n0 & 0 & 0 & -1 & -2\n\\end{array} \\right]\\) \\(\\begin{array}{c}\nL_1 + 3L_3 \\\\\nL_2 + 3L_4 \\\\\n-L_3 \\\\\n-L_4 \\\\\n\\end{array}\\)\n\\(\\left[ \\begin{array}{cccc|c}\n1 & 0 & 0 & 0 & 3\\\\\n0 & 1 & 0 & 0 & -5\\\\\n0 & 0 & 1 & 0 & -1\\\\\n0 & 0 & 0 & 1 & 2\n\\end{array} \\right]\\) \\(S = \\left[\\begin{array}{c}\n3 \\\\\n-5 \\\\\n-1 \\\\\n2 \\\\\n\\end{array} \\right]\\) Portanto: \\(A^{-1} = \\begin{bmatrix}\n3 & -5 \\\\\n-1 & 2\n\\end{bmatrix}\\)"
-  },
-  {
-    "objectID": "matrizes.html#inversa-de-uma-matriz-3",
-    "href": "matrizes.html#inversa-de-uma-matriz-3",
-    "title": "Matrizes",
-    "section": "Inversa de uma matriz",
-    "text": "Inversa de uma matriz\n\n\n\nVerifique que \\(B = \\begin{bmatrix}\n1 & 2 \\\\\n2 & 4\n\\end{bmatrix}\\) não é invertível e portanto não pode ser escrita por:\n\\(\\begin{bmatrix}\n1 & 2 \\\\\n2 & 4\n\\end{bmatrix}\n\\begin{bmatrix}\nw & x \\\\\ny & z\n\\end{bmatrix} =\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\\)\n\nO sistema de equações lineares fica:\n\\(\\begin{cases}\nw + 2y = 1 \\\\\nx + 2z = 0 \\\\\n2w + 4y = 0 \\\\\n2x + 4z = 1\n\\end{cases}\\)\n\n\n\n\nQue pode ser representado por:\n\\(\\left[ \\begin{array}{cccc|c}\n1 & 0 & 2 & 0 & 1\\\\\n0 & 1 & 0 & 2 & 0\\\\\n2 & 0 & 4 & 0 & 0\\\\\n0 & 2 & 0 & 4 & 1\n\\end{array} \\right]\\) \\(\\begin{array}{c}\n\\\\\n\\\\\nL_3 - 2L_1 \\\\\nL_4 - 2L_2 \\\\\n\\end{array}\\) \\(\\left[ \\begin{array}{cccc|c}\n1 & 0 & 2 & 0 & 1\\\\\n0 & 1 & 0 & 2 & 0\\\\\n0 & 0 & 0 & 0 & -2\\\\\n0 & 0 & 0 & 0 & -1\n\\end{array} \\right]\\)\n\nA matriz na forma escalonada mostra que o sistema não tem solução e portanto a matriz \\(B\\) não é invertível."
-  },
-  {
-    "objectID": "matrizes.html#inversa-de-uma-matriz-4",
-    "href": "matrizes.html#inversa-de-uma-matriz-4",
-    "title": "Matrizes",
-    "section": "Inversa de uma matriz",
-    "text": "Inversa de uma matriz\n\n\n\n\n\n\n\nTeorema\n\n\nSe \\(A\\) é uma matriz \\(n \\times n\\) invertível, o sistema de equações lineares dado por \\(A\\vec{x} = \\vec{b}\\) tem uma única solução \\(\\vec{x} = A^{-1}\\vec{b}\\) para cada \\(\\vec{b}\\) em \\(\\mathbb{R}^n\\).\n\n\n\n\n\n\n\n\n\n\n\nPropriedades\n\n\n\nSe \\(A\\) é uma matriz invertível, então \\(A^{-1}\\) é invertível e \\((A^{-1})^{-1} = A\\).\nSe \\(A\\) é uma matriz invertível e \\(c\\) é um escalar não nulo, então \\(cA\\) é uma matriz invertível e \\((cA)^{-1} = \\frac{1}{c}A^{-1}\\).\nSe \\(A\\) e \\(B\\) são matrizes invertíveis de mesma ordem, então \\(AB\\) é invertível e \\((AB)^{-1} = B^{-1}A^{-1}\\).\nSe \\(A\\) é uma matriz invertível, então \\(A^T\\) é invertível e \\((A^T)^{-1} = (A^{-1})^T\\).\nSe \\(A\\) é uma matriz invertível, então, para todo inteiro não negativo \\(n\\), a matriz \\(A^n\\) é invertível e \\((A^n)^{-1} = (A^{-1})^n\\)."
-  },
-  {
-    "objectID": "matrizes.html#inversa-de-uma-matriz-pelo-método-de-gauss-jordan",
-    "href": "matrizes.html#inversa-de-uma-matriz-pelo-método-de-gauss-jordan",
-    "title": "Matrizes",
-    "section": "Inversa de uma matriz pelo método de Gauss-Jordan",
-    "text": "Inversa de uma matriz pelo método de Gauss-Jordan\n\nPara encontrar a inversa de uma matriz \\(A\\) usando o método de Gauss-Jordan, seguimos os seguintes passos:\n\nFormação da Matriz Aumentada:\n\n\nDada uma matriz \\(A\\) de ordem \\(n \\times n\\), formamos a matriz aumentada \\([A \\mid I]\\), onde \\(I\\) é a matriz identidade de ordem \\(n \\times n\\).\n\n\nAplicação de Operações Elementares:\n\n\nAplicamos operações elementares sobre as linhas da matriz aumentada \\([A \\mid I]\\) para transformar a parte esquerda (a matriz \\(A\\)) na matriz identidade \\(I\\).\n\n\nObtenção da Inversa:\n\n\nQuando a parte esquerda da matriz aumentada se transforma em \\(I\\), a parte direita será a matriz inversa \\(A^{-1}\\). Ou seja, \\([I \\mid A^{-1}]\\)."
-  },
-  {
-    "objectID": "matrizes.html#inversa-de-uma-matriz-pelo-método-de-gauss-jordan-1",
-    "href": "matrizes.html#inversa-de-uma-matriz-pelo-método-de-gauss-jordan-1",
-    "title": "Matrizes",
-    "section": "Inversa de uma matriz pelo método de Gauss-Jordan",
-    "text": "Inversa de uma matriz pelo método de Gauss-Jordan\n\nExemplo Prático\n\n\nConsidere a matriz \\(A = \\begin{bmatrix} 2 & 1 & 1 \\\\ 1 & 3 & 2 \\\\ 1 & 0 & 0 \\end{bmatrix}\\).\n\nQue tem a matriz aumentada \\([A \\mid I]\\):\n\\[\\left[\\begin{array}{ccc|ccc}\n   2 & 1 & 1 & 1 & 0 & 0 \\\\\n   1 & 3 & 2 & 0 & 1 & 0 \\\\\n   1 & 0 & 0 & 0 & 0 & 1\n   \\end{array}\\right]\\]\n\n\n\n\nAplique operações elementares para transformar a parte esquerda em \\(I\\):\n\\(\\left[\\begin{array}{ccc|ccc}\n   2 & 1 & 1 & 1 & 0 & 0 \\\\\n   1 & 3 & 2 & 0 & 1 & 0 \\\\\n   1 & 0 & 0 & 0 & 0 & 1\n   \\end{array}\\right]\\) \\(\\begin{array}{c}\n   L_1 \\leftrightarrow L_3\\\\\n   \\\\\n   \\\\\n   \\end{array}\\) \\(\\left[\\begin{array}{ccc|ccc}\n   1 & 0 & 0 & 0 & 0 & 1 \\\\\n   1 & 3 & 2 & 0 & 1 & 0 \\\\\n   2 & 1 & 1 & 1 & 0 & 0\n   \\end{array}\\right]\\) \\(\\begin{array}{c}\n   \\\\\n   L_2 - L_1\\\\\n   L_3 - 2L_1\\\\\n   \\end{array}\\) \\(\\left[\\begin{array}{ccc|ccc}\n   1 & 0 & 0 & 0 & 0 & 1 \\\\\n   0 & 3 & 2 & 0 & 1 & -1 \\\\\n   0 & 1 & 1 & 1 & 0 & -2\n   \\end{array}\\right]\\) \\(\\begin{array}{c}\n   \\\\\n   L_2 \\leftrightarrow L_3\\\\\n   \\\\\n   \\end{array}\\) \\(\\left[\\begin{array}{ccc|ccc}\n   1 & 0 & 0 & 0 & 0 & 1 \\\\\n   0 & 1 & 1 & 1 & 0 & -2 \\\\\n   0 & 3 & 2 & 0 & 1 & -1\n   \\end{array}\\right]\\) \\(\\begin{array}{c}\n   \\\\\n   \\\\\n   L_3 - 3L_2\\\\\n   \\end{array}\\)\n\\(\\left[\\begin{array}{ccc|ccc}\n   1 & 0 & 0 & 0 & 0 & 1 \\\\\n   0 & 1 & 1 & 1 & 0 & -2 \\\\\n   0 & 0 & -1 & -3 & 1 & 5\n   \\end{array}\\right]\\) \\(\\begin{array}{c}\n   \\\\\n   \\\\\n   -L_3\\\\\n   \\end{array}\\) \\(\\left[\\begin{array}{ccc|ccc}\n   1 & 0 & 0 & 0 & 0 & 1 \\\\\n   0 & 1 & 1 & 1 & 0 & -2 \\\\\n   0 & 0 & 1 & 3 & -1 & -5\n   \\end{array}\\right]\\) \\(\\begin{array}{c}\n   \\\\\n   L_2 - L_3\\\\\n   \\\\\n   \\end{array}\\) \\(\\left[\\begin{array}{ccc|ccc}\n   1 & 0 & 0 & 0 & 0 & 1 \\\\\n   0 & 1 & 0 & -2 & 1 & 3 \\\\\n   0 & 0 & 1 & 3 & -1 & -5\n   \\end{array}\\right]\\)\n\n\\[A^{-1} = \\begin{bmatrix}\n   0  &  0 &  1 \\\\\n   -2 &  1 &  3 \\\\\n   3  & -1 & -5\n   \\end{bmatrix}\\]"
-  },
-  {
-    "objectID": "matrizes.html#matrizes-elementares",
-    "href": "matrizes.html#matrizes-elementares",
-    "title": "Matrizes",
-    "section": "Matrizes Elementares",
-    "text": "Matrizes Elementares\n\nDefinição:\nMatrizes elementares são aquelas obtidas através de operações elementares realizadas sobre a matriz identidade. Elas desempenham um papel fundamental na solução de sistemas lineares e na obtenção da inversa de uma matriz.\nExemplos de Operações Elementares:\n\nTroca de Linhas: Exemplo: Trocar a linha 1 pela linha 2.\n\\[E = \\begin{bmatrix} 0 & 1 \\\\ 1 & 0 \\end{bmatrix}\\]\nMultiplicação de uma Linha por um Escalar: Exemplo: Multiplicar a linha 1 por um escalar \\(k\\).\n\\[E = \\begin{bmatrix} k & 0 \\\\ 0 & 1 \\end{bmatrix}\\]\nAdição de Múltiplos de Linhas: Exemplo: Adicionar a linha 2 multiplicada por um escalar \\(k\\) à linha 1.\n\\[E = \\begin{bmatrix} 1 & k \\\\ 0 & 1 \\end{bmatrix}\\]"
-  },
-  {
-    "objectID": "matrizes.html#exemplo-de-matrizes-elementares-para-calcular-a-inversa",
-    "href": "matrizes.html#exemplo-de-matrizes-elementares-para-calcular-a-inversa",
-    "title": "Matrizes",
-    "section": "Exemplo de Matrizes Elementares para Calcular a Inversa",
-    "text": "Exemplo de Matrizes Elementares para Calcular a Inversa\n\n\n\nConsidere a matriz \\(A = \\begin{bmatrix} 2 & 1 & 1 \\\\ 1 & 3 & 2 \\\\ 1 & 0 & 0 \\end{bmatrix}\\).\n\nQue foi resolvida no exemplo anterior pela sequência de operações elementares:\n\n\\(L_1 \\leftrightarrow L_3\\)\n\\(L_2 \\rightarrow L_2 - L_1\\); \\(L_3 \\rightarrow L_3 - 2L_1\\)\n\\(L_2 \\leftrightarrow L_3\\)\n\\(L_3 \\rightarrow L_3 - 3L_2\\)\n\\(L_3 \\rightarrow -L_3\\)\n\\(L_2 \\rightarrow L_2 - L_3\\)\n\n\n\n\n\n\n\n\nTroca de \\(L_1\\) e \\(L_3\\):\n\\[E_1 = \\begin{bmatrix}\n0 & 0 & 1 \\\\\n0 & 1 & 0 \\\\\n1 & 0 & 0\n\\end{bmatrix}\\]\n\\(L_2 \\rightarrow L_2 - L_1\\); \\(L_3 \\rightarrow L_3 - 2L_1\\):\n\\[E_2 = \\begin{bmatrix}\n1 & 0 & 0 \\\\\n-1 & 1 & 0 \\\\\n-2 & 0 & 1\n\\end{bmatrix}\\]\nTroca de \\(L_2\\) e \\(L_3\\):\n\\[E_3 = \\begin{bmatrix}\n1 & 0 & 0 \\\\\n0 & 0 & 1 \\\\\n0 & 1 & 0\n\\end{bmatrix}\\]\n\n\n\n\\(L_3 \\rightarrow L_3 - 3L_2\\):\n\\[E_4 = \\begin{bmatrix}\n1 & 0 & 0 \\\\\n0 & 1 & 0 \\\\\n0 & -3 & 1\n\\end{bmatrix}\\]\nMultiplicação de \\(L_3\\) por \\(-1\\):\n\\[E_5 = \\begin{bmatrix}\n1 & 0 & 0 \\\\\n0 & 1 & 0 \\\\\n0 & 0 & -1\n\\end{bmatrix}\\]\n\\(L_2 \\rightarrow L_2 - L_3\\):\n\\[E_6 = \\begin{bmatrix}\n1 & 0 & 0 \\\\\n0 & 1 & -1 \\\\\n0 & 0 & 1\n\\end{bmatrix}\\]"
-  },
-  {
-    "objectID": "matrizes.html#exemplo-de-matrizes-elementares-para-calcular-a-inversa-1",
-    "href": "matrizes.html#exemplo-de-matrizes-elementares-para-calcular-a-inversa-1",
-    "title": "Matrizes",
-    "section": "Exemplo de Matrizes Elementares para Calcular a Inversa",
-    "text": "Exemplo de Matrizes Elementares para Calcular a Inversa\n\nEstabelecidas as matrizes elementares \\(E_1\\) a \\(E_6\\), tem-se a seguinte relação:\n\\[E_6 \\times E_5 \\times E_4 \\times E_3 \\times E_2 \\times E_1 \\times A = I\\]\nE consequentemente:\n\\[E_1^{-1} \\times E_2^{-1} \\times E_3^{-1} \\times E_4^{-1} \\times E_5^{-1} \\times E_6^{-1} = A\\]\n\n\n\n\n\n\n\n\n\nO Teorema Fundamental das Matrizes Invertíveis - versão 1\n\n\nSeja \\(A\\) uma matriz \\(n \\times n\\). As seguintes afirmações são equivalentes:\n\n\\(A\\) é invertível.\n\\(A\\vec{x} = \\vec{b}\\) tem uma única solução para cada \\(\\vec{b}\\) em \\(\\mathbb{R}^n\\).\n\\(A\\vec{x} = 0\\) tem apenas a solução trivial.\nA forma escalonada reduzida de \\(A\\) é \\(I_n\\).\n\\(A\\) é um produto de matrizes elementares."
-  },
-  {
-    "objectID": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral",
-    "href": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral",
-    "title": "Matrizes",
-    "section": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral",
-    "text": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral\n\nProblema\nOs recifes de coral enfrentam várias ameaças ambientais, como branqueamento, acidificação dos oceanos e destruição física. Essas ameaças podem ser modeladas usando uma Cadeia de Markov para entender a probabilidade de um recife estar em um certo estado de saúde ao longo do tempo.\nEstados\nDefinimos três estados possíveis para a saúde de um recife de coral:\n\nS1: Saudável\nS2: Moderadamente Degradado\nS3: Severamente Degradado\n\nMatriz de Transição\nA matriz de transição de estados, \\(P\\), representa as probabilidades de transição entre os estados de saúde de um recife de coral de um período para o outro.\n\\[P = \\begin{bmatrix}\n0.7 & 0.3 & 0.1 \\\\\n0.2 & 0.5 & 0.3 \\\\\n0.1 & 0.2 & 0.6\n\\end{bmatrix}\\]\nCada elemento \\(P_{ij}\\) na matriz representa a probabilidade de transição do estado \\(j\\) na coluna para o estado \\(i\\) na linha. Por exemplo, \\(P_{12} = 0.2\\) indica que há uma probabilidade de 20% de um recife saudável (\\(S1\\)) passar para o estado moderadamente degradado (\\(S2\\)) no próximo período."
-  },
-  {
-    "objectID": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-1",
-    "href": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-1",
-    "title": "Matrizes",
-    "section": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral",
-    "text": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral\n\nEstado inicial\nVamos considerar que inicialmente no tempo \\(t_0\\) 80% dos recifes estão saudáveis, 15% estão moderadamente degradados e 5% estão severamente degradados. Isso pode ser representado pelo vetor de estado inicial:\n\\[\\vec{v_0} = \\begin{bmatrix}\n0.8 \\\\\n0.15 \\\\\n0.05\n\\end{bmatrix}\\]\nEstado em \\(t + 1\\)\nPara determinar o estado dos recifes após um período de tempo \\(t_1\\), multiplicamos o vetor de estado inicial pela matriz de transição:\n\\[\n\\vec{v_1} = P \\times \\vec{v_0} = \\begin{bmatrix}\n0.7 & 0.3 & 0.1 \\\\\n0.2 & 0.5 & 0.3 \\\\\n0.1 & 0.2 & 0.6\n\\end{bmatrix} \\times \\begin{bmatrix}\n0.8 \\\\\n0.15 \\\\\n0.05\n\\end{bmatrix} = \\begin{bmatrix}\n0.61 \\\\\n0.25 \\\\\n0.14\n\\end{bmatrix}\n\\]\nIsso significa que, após um período, 61% dos recifes estarão saudáveis, 25% estarão moderadamente degradados e 14% estarão severamente degradados."
-  },
-  {
-    "objectID": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-2",
-    "href": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-2",
-    "title": "Matrizes",
-    "section": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral",
-    "text": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral\n\nEstado Estacionário\nO estado estacionário é um vetor de probabilidades que representa a distribuição dos estados de um sistema em equilíbrio, onde as probabilidades de estar em cada estado não mudam com o tempo. Para uma cadeia de Markov, isso ocorre quando o vetor de estado não muda após uma multiplicação pela matriz de transição.\nSe \\(\\vec{v_{ss}}\\) é um vetor de estado estacionário e \\(P\\) é a matriz de transição, então:\n\\[\n\\vec{v_{ss}} = P \\times \\vec{v_{ss}}\n\\]\nPortanto, precisamos resolver o sistema de equações:\n\\[\n\\begin{bmatrix}\n0.7 & 0.3 & 0.1 \\\\\n0.2 & 0.5 & 0.3 \\\\\n0.1 & 0.2 & 0.6\n\\end{bmatrix} \\times \\begin{bmatrix}\n\\pi_1 \\\\\n\\pi_2 \\\\\n\\pi_3\n\\end{bmatrix} = \\begin{bmatrix}\n\\pi_1 \\\\\n\\pi_2 \\\\\n\\pi_3\n\\end{bmatrix}\n\\]"
-  },
-  {
-    "objectID": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-3",
-    "href": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-3",
-    "title": "Matrizes",
-    "section": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral",
-    "text": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral\n\nResolução do Sistema\n\n\nHá ainda uma condição adicional de que a soma das probabilidades em \\(\\vec{v_t}\\) seja 1:\n\\[\n\\pi_1 + \\pi_2 + \\pi_3 = 1\n\\]\n\nQue gera e sistema de equações:\n\\[\n\\begin{cases}\n0.7\\pi_1 + 0.3\\pi_2 + 0.1\\pi_3 = \\pi_1 \\\\\n0.2\\pi_1 + 0.5\\pi_2 + 0.3\\pi_3 = \\pi_2 \\\\\n0.1\\pi_1 + 0.2\\pi_2 + 0.6\\pi_3 = \\pi_3 \\\\\n\\pi_1 + \\pi_2 + \\pi_3 = 1\n\\end{cases}\n\\]\n\n\n\n\n\n\nO pode ser reorganizado como:\n\\[\n\\begin{cases}\n-3\\pi_1 + 3\\pi_2 + \\pi_3 = 0 \\\\\n2\\pi_1 - 5\\pi_2 + 3\\pi_3 = 0 \\\\\n\\pi_1 + 2\\pi_2 - 4\\pi_3 = 0 \\\\\n\\pi_1 + \\pi_2 + \\pi_3 = 1\n\\end{cases}\n\\]\n\nE tem solução:\n\\[\n\\vec{v_{ss}} = \\begin{bmatrix} \\frac{7}{17} \\\\ \\frac{11}{34} \\\\ \\frac{9}{34} \\end{bmatrix} ~ \\sim \\begin{bmatrix}\n0.4117 \\\\\n0.3235 \\\\\n0.2647\n\\end{bmatrix}\n\\]\n\n\n\n\n\n\n\n\n\nResoluçao completa\n\n\nFaça o download da RESOLUÇÃO COMPLETA"
-  },
-  {
-    "objectID": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-4",
-    "href": "matrizes.html#exemplo-de-aplicação-cadeias-de-markov-para-recifes-de-coral-4",
-    "title": "Matrizes",
-    "section": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral",
-    "text": "Exemplo de aplicação: Cadeias de Markov para Recifes de Coral\n\nInterpretação do vetor de Estado Estacionário\nNo longo prazo, a distribuição das probabilidades entre os estados é:\n\n\\(\\pi_1 = \\frac{7}{17} ~ \\sim 0.4117\\)\n\\(\\pi_2 = \\frac{11}{34} ~ \\sim 0.3235\\)\n\\(\\pi_3 = \\frac{9}{34} ~ \\sim 0.2647\\)\n\n\n\n\n\n\n\n\n\nConclusão\n\n\nA existência de um vetor estacionário indica que, independentemente do estado inicial, a cadeia de Markov converge para essa distribuição de probabilidade quando o sistema está em equilíbrio.\nPortanto, mantendo as condições atuais que resultam na matriz de transição vigente, espera-se que, a longo prazo, aproximadamente 41,18% do recife de coral permanecerá em condições Saudáveis, 32,35% estará Moderadamente Degradado e 26,47% será Severamente Degradado.\n\n\n\n\n\n\n\n\nBICT Mar - Unifesp"
-  },
-  {
-    "objectID": "mmq.html#conteúdo-da-aula",
-    "href": "mmq.html#conteúdo-da-aula",
-    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
-    "section": "Conteúdo da Aula",
-    "text": "Conteúdo da Aula\n\nIntrodução à Regressão Linear Simples\nDefinição dos Resíduos\nMétodo dos Mínimos Quadrados\nRepresentação Vetorial dos Resíduos\nGeometria da Solução de Mínimos Quadrados\nSolução Matricial do Método dos Mínimos Quadrados"
-  },
-  {
-    "objectID": "mmq.html#introdução-à-regressão-linear-simples",
-    "href": "mmq.html#introdução-à-regressão-linear-simples",
-    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
-    "section": "Introdução à Regressão Linear Simples",
-    "text": "Introdução à Regressão Linear Simples\nA regressão linear simples é um método para modelar a relação entre uma variável dependente \\(y\\) e uma variável independente \\(x\\). A equação da reta ajustada é dada por:\n\\[ y = \\beta_0 + \\beta_1 x \\]\n\n\n\n\n\n\nObservação\n\\(x_i\\)\n\\(y_i\\)\n\n\n\n\n\\(1\\)\n\\(x_1\\)\n\\(y_1\\)\n\n\n\\(2\\)\n\\(x_2\\)\n\\(y_2\\)\n\n\n\\(3\\)\n\\(x_3\\)\n\\(y_3\\)\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\\(n\\)\n\\(x_n\\)\n\\(y_n\\)"
-  },
-  {
-    "objectID": "mmq.html#definição-dos-resíduos",
-    "href": "mmq.html#definição-dos-resíduos",
-    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
-    "section": "Definição dos Resíduos",
-    "text": "Definição dos Resíduos\nNa figura abaixo, os resíduos \\(e_i\\) representam as diferenças entre os valores observados \\(y_i\\) e os valores ajustados \\(\\hat{y}_i\\) pela reta de regressão:\n\\[ e_i = y_i - (\\beta_0 + \\beta_1 x_i) \\]\nPortando na regressão linear, assume-se que o valor ajustado em \\(y\\) é dado por:\n\\[ \\hat{y} = \\beta_0 + \\beta_1 x + e\\]\n\n\n\n\n\n\nObservação\n\\(x_i\\)\n\\(y_i\\)\n\n\n\n\n\\(1\\)\n\\(x_1\\)\n\\(y_1\\)\n\n\n\\(2\\)\n\\(x_2\\)\n\\(y_2\\)\n\n\n\\(3\\)\n\\(x_3\\)\n\\(y_3\\)\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\\(n\\)\n\\(x_n\\)\n\\(y_n\\)"
-  },
-  {
-    "objectID": "mmq.html#método-dos-mínimos-quadrados",
-    "href": "mmq.html#método-dos-mínimos-quadrados",
-    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
-    "section": "Método dos Mínimos Quadrados",
-    "text": "Método dos Mínimos Quadrados\nO Método dos Mínimos Quadrados busca minimizar a soma dos quadrados dos resíduos:\n\\[ SQ_{res} = \\sum_{i=1}^{n} e_i^2 = e_1^2 + e_2^2 + \\cdots + e_n^2 \\]\nQue pode ser representada como:\n\\[\n\\begin{cases}\ne_1 = y_1 - (\\beta_0 + \\beta_1 x_1) \\\\\ne_2 = y_2 - (\\beta_0 + \\beta_1 x_2) \\\\\n\\vdots \\\\\ne_n = y_n - (\\beta_0 + \\beta_1 x_n) \\\\\n\\end{cases}\n\\]"
-  },
-  {
-    "objectID": "mmq.html#representação-vetorial-dos-resíduos",
-    "href": "mmq.html#representação-vetorial-dos-resíduos",
-    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
-    "section": "Representação Vetorial dos Resíduos",
-    "text": "Representação Vetorial dos Resíduos\n\\[\n\\left[ \\begin{array}{c}\ne_1 \\\\\ne_2 \\\\\n\\vdots \\\\\ne_n \\\\\n\\end{array} \\right]\n=\n\\left[ \\begin{array}{c}\ny_1 - (\\beta_0 + \\beta_1 x_1) \\\\\ny_2 - (\\beta_0 + \\beta_1 x_2) \\\\\n\\vdots \\\\\ny_n - (\\beta_0 + \\beta_1 x_n) \\\\\n\\end{array} \\right]\n=\n\\left[ \\begin{array}{c}\ny_1 \\\\\ny_2 \\\\\n\\vdots \\\\\ny_n\n\\end{array} \\right]\n-\n\\left(\n\\beta_0\n\\left[ \\begin{array}{c}\n1 \\\\\n1 \\\\\n\\vdots \\\\\n1 \\\\\n\\end{array} \\right]\n+\n\\beta_1\n\\left[ \\begin{array}{c}\nx_1 \\\\\nx_2 \\\\\n\\vdots \\\\\nx_n \\\\\n\\end{array} \\right]\n\\right)\n\\]\n\nDefinimos os vetores:\n\\[\\vec{e} =\n\\left[ \\begin{array}{c}\ne_1 \\\\\ne_2 \\\\\n\\vdots \\\\\ne_n \\\\\n\\end{array} \\right];\n\\vec{y} =\n\\left[ \\begin{array}{c}\ny_1 \\\\\ny_2 \\\\\n\\vdots \\\\\ny_n \\\\\n\\end{array} \\right];\n\\vec{f}_0 =\n\\left[ \\begin{array}{c}\n1 \\\\\n1 \\\\\n\\vdots \\\\\n1 \\\\\n\\end{array} \\right];\n\\vec{f}_1 =\n\\left[ \\begin{array}{c}\nx_1 \\\\\nx_2 \\\\\n\\vdots \\\\\nx_n \\\\\n\\end{array} \\right]\\]"
-  },
-  {
-    "objectID": "mmq.html#representação-vetorial-dos-resíduos-1",
-    "href": "mmq.html#representação-vetorial-dos-resíduos-1",
-    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
-    "section": "Representação Vetorial dos Resíduos",
-    "text": "Representação Vetorial dos Resíduos\nPodemos portanto representar os resíduos como vetore em que o vetor \\(\\vec{e}\\) é igual ao vetor \\(y\\) menos uma combinação linear dos vetores \\(\\vec{f}_0\\) e \\(\\vec{f}_0\\) com constantes \\(\\beta_0\\) e \\(\\beta_1\\), onde:\n\\[ \\vec{e} = \\vec{y} - (\\beta_0 \\vec{f}_0 + \\beta_1 \\vec{f}_1) \\]"
-  },
-  {
-    "objectID": "mmq.html#geometria-da-solução-de-mínimos-quadrados",
-    "href": "mmq.html#geometria-da-solução-de-mínimos-quadrados",
-    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
-    "section": "Geometria da Solução de Mínimos Quadrados",
-    "text": "Geometria da Solução de Mínimos Quadrados\nA norma ao quadrado do vetor \\(\\vec{e} =\n\\left[ \\begin{array}{c}\ne_1 \\\\\ne_2 \\\\\n\\vdots \\\\\ne_n \\\\\n\\end{array} \\right]\\) é calculada por\n\\[\\Vert\\vec{e}\\Vert^{2}=\\vec{e}\\cdot\\vec{e}=e_{1}^{2}+e_{2}^{2}+\\cdots+e_{n}^{2}\\]\n\n\n\n\n\n\n\nRepresentação da Solução do MMQ no GeoGebra\n\n\nO Método dos Mínimos Quadrados determina \\(\\beta_0\\) e \\(\\beta_1\\) de modo a minimizar o comprimento (a norma) do vetor \\(\\vec{e}\\) que pode ser obtida impondo que o vetor \\(\\vec{e}\\) seja ortogonal aos vetores \\(\\vec{f_0}\\) e \\(\\vec{f_1}\\), ou seja:\n\\[ \\vec{f_0} \\cdot \\vec{e} = 0 \\] \\[ \\vec{f_1} \\cdot \\vec{e} = 0 \\]\nhttps://www.geogebra.org/calculator/eyk8ammw"
-  },
-  {
-    "objectID": "mmq.html#geometria-da-solução-de-mínimos-quadrados-1",
-    "href": "mmq.html#geometria-da-solução-de-mínimos-quadrados-1",
-    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
-    "section": "Geometria da Solução de Mínimos Quadrados",
-    "text": "Geometria da Solução de Mínimos Quadrados\n\\[\n\\left\\{\\begin{array} {c}\n\\vec{f_0} \\cdot \\vec{e} = 0 \\Leftrightarrow \\vec{f_0}\\cdot(\\vec{y}-\\beta_0\\vec{f_0}-\\beta_1\\vec{f_1})=0\\\\\n\\vec{f_1} \\cdot \\vec{e} = 0 \\Leftrightarrow \\vec{f_1}\\cdot(\\vec{y}-\\beta_0\\vec{f_0}-\\beta_1\\vec{f_1})=0\n\\end{array} \\right.\n\\] que é equivalente a: \\[\n\\left\\{\\begin{array} {c}\n\\beta_0\\vec{f_0}\\cdot\\vec{f_0}+\\beta_1\\vec{f_0}\\cdot\\vec{f_1}=\\vec{f_0}\\cdot\\vec{y}\\\\\n\\beta_0\\vec{f_1}\\cdot\\vec{f_0}+\\beta_1\\vec{f_1}\\cdot\\vec{f_1}=\\vec{f_1}\\cdot\\vec{y}\n\\end{array} \\right.\n,\n\\] que ainda pode ser escrito na forma matricial: \\[\n\\left[ \\begin{array}{cc}\n\\vec{f_0}\\cdot\\vec{f_0} & \\vec{f_0}\\cdot\\vec{f_1}\\\\\n\\vec{f_1}\\cdot\\vec{f_0} & \\vec{f_1}\\cdot\\vec{f_1}\n\\end{array} \\right]\n\\left[ \\begin{array}{c}\n\\beta_0\\\\\n\\beta_1\n\\end{array} \\right]\n=\n\\left[ \\begin{array}{c}\n\\vec{f_0}\\cdot\\vec{y}\\\\\n\\vec{f_1}\\cdot\\vec{y}\n\\end{array} \\right]\n\\]"
-  },
-  {
-    "objectID": "mmq.html#solução-matricial-do-método-dos-mínimos-quadrados",
-    "href": "mmq.html#solução-matricial-do-método-dos-mínimos-quadrados",
-    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
-    "section": "Solução Matricial do Método dos Mínimos Quadrados",
-    "text": "Solução Matricial do Método dos Mínimos Quadrados\nA combinação linear:\n\\[\n\\left[ \\begin{array}{cc}\n\\vec{f_0}\\cdot\\vec{f_0} & \\vec{f_0}\\cdot\\vec{f_1}\\\\\n\\vec{f_1}\\cdot\\vec{f_0} & \\vec{f_1}\\cdot\\vec{f_1}\n\\end{array} \\right]\n\\left[ \\begin{array}{c}\n\\beta_0\\\\\n\\beta_1\n\\end{array} \\right]\n=\n\\left[ \\begin{array}{c}\n\\vec{f_0}\\cdot\\vec{y}\\\\\n\\vec{f_1}\\cdot\\vec{y}\n\\end{array} \\right]\n\\]\npor ser expressa pelas matrizes:\n\\[X = \\left[ \\begin{array}{ccc}\n\\vec{f_0} & \\vdots & \\vec{f_1}\n\\end{array} \\right] =\n\\left[ \\begin{array}{cc}\n1 & x_1 \\\\\n1 & x_2 \\\\\n\\vdots & \\vdots \\\\\n1 & x_n \\\\\n\\end{array} \\right];\nY = \\left[ \\begin{array}{c}\ny_1 \\\\\ny_2 \\\\\n\\vdots \\\\\ny_n \\\\\n\\end{array} \\right];\nB = \\left[ \\begin{array}{c}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\end{array} \\right]\n\\]\nE finalmente:\n\\[B = (X^{T} X)^{-1}(X^{T}Y)\\]\n\n\n\n\nBICT Mar - Unifesp"
+    "text": "Dependência linear\n\n\n\n\n\n\n\nTeorema\n\n\nQualquer conjunto de \\(m\\) vetores de \\(\\mathbb{R}^n\\) é linearmente dependente se \\(m &gt; n\\).\n\n\n\n\nExemplo:\nOs vetores \\(\\left[ \\begin{array}{c} 1\\\\ 3 \\end{array} \\right]\\), \\(\\left[ \\begin{array}{c} 2\\\\ 4 \\end{array} \\right]\\) e \\(\\left[ \\begin{array}{c} 3\\\\ 1 \\end{array} \\right]\\) são linearmente dependentes pois não pode haver mais que dois vetores linearmente independentes em \\(\\mathbb{R}^2\\)\n\nVerifique isso resolvendo o sistema homogêneo\n\\[c_1\\left[ \\begin{array}{c} 1\\\\ 3 \\end{array} \\right] + c_2\\left[ \\begin{array}{c} 2\\\\ 4 \\end{array} \\right] + c_3\\left[ \\begin{array}{c} 3\\\\ 1 \\end{array} \\right] = \\left[ \\begin{array}{c} 0\\\\ 0 \\end{array} \\right]\\]"
   }
 ]
