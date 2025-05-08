@@ -26,7 +26,7 @@ format:
 
 A regressão linear simples é um método para modelar a relação entre uma variável dependente $y$ e uma variável independente $x$. A equação da reta ajustada é dada por:
 
-$$ y = \beta_0 + \beta_1 x $$
+$$ \hat{y} = \beta_0 + \beta_1 x $$
 
 ::: {style="font-size: .6em"}
 
@@ -59,14 +59,23 @@ Na figura abaixo, os resíduos $e_i$ representam as diferenças entre os valores
 
 $$ e_i = y_i - (\beta_0 + \beta_1 x_i) $$
 
-Portando na regressão linear, assume-se que o valor ajustado em $y$ é dado por:
+Portando na regressão linear, assume-se que o valor observado em $y_i$ é dado por:
 
-$$ \hat{y} = \beta_0 + \beta_1 x + e$$
+$$ y_i = \beta_0 + \beta_1 x_i + e_i$$
+
+::: {.callout-tip}
+
+
+
+:::: columns
+
+::: {.column width="50%"}
+
+Acesse o link [Regresão linear Geogebra](https://www.geogebra.org/calculator/d8a9x9j3){target="_blank"}
 
 ::: {style="font-size: .6em"}
 
-:::: columns
-::: {.column width="30%"}
+<div style="text-align: center;">
 
 | Observação | $x_i$ | $y_i$ |
 |------------|---------|---------|
@@ -76,15 +85,23 @@ $$ \hat{y} = \beta_0 + \beta_1 x + e$$
 | $\vdots$ | $\vdots$ | $\vdots$ |
 | $n$      | $x_n$ | $y_n$ |
 
+</div>
 
 :::
 
-::: {.column width="70%"}
+:::
 
-![](imagens/diagrama_regressao.png){style="background-color:#ffffff; width:500px"}
+::: {.column width="50%"}
 
+<div style="text-align: center;">
+
+![](imagens/diagrama_regressao.png){style="background-color:#ffffff; width:70%"}
+
+</div>
 :::
 ::::
+
+
 
 :::
 
@@ -106,6 +123,16 @@ e_n = y_n - (\beta_0 + \beta_1 x_n) \\
 $$
 
 ## Representação Vetorial dos Resíduos
+
+Podemos portanto representar os resíduos como vetor em que o vetor $\vec{e}$ é igual ao vetor $y$ menos uma **combinação linear** dos vetores $\vec{f}_0$ e $\vec{f}_0$ com constantes $\beta_0$ e $\beta_1$.
+
+</br>
+
+$$ \vec{e} = \vec{y} - (\beta_0 \vec{f}_0 + \beta_1 \vec{f}_1) $$
+
+</br>
+
+::: {style="font-size: .7em"}
 
 $$
 \left[ \begin{array}{c}
@@ -148,9 +175,8 @@ x_n \\
 \right)
 $$
 
-<hr>
 
-Definimos os vetores:
+Onde:
 
 $$\vec{e} =
 \left[ \begin{array}{c}
@@ -181,23 +207,21 @@ x_2 \\
 x_n \\
 \end{array} \right]$$
 
+:::
+
 ## Representação Vetorial dos Resíduos
 
-Podemos portanto representar os resíduos como vetore em que o vetor $\vec{e}$ é igual ao vetor $y$ menos uma **combinação linear** dos vetores $\vec{f}_0$ e $\vec{f}_0$ com constantes $\beta_0$ e $\beta_1$, onde:
+Podemos portanto representar os resíduos como vetor em que o vetor $\vec{e}$ é igual ao vetor $y$ menos uma **combinação linear** dos vetores $\vec{f}_0$ e $\vec{f}_0$ com constantes $\beta_0$ e $\beta_1$, onde:
 
 $$ \vec{e} = \vec{y} - (\beta_0 \vec{f}_0 + \beta_1 \vec{f}_1) $$
 
 ## Geometria da Solução de Mínimos Quadrados
 
-A norma ao quadrado do vetor $\vec{e} =
-\left[ \begin{array}{c}
-e_1 \\
-e_2 \\
-\vdots \\
-e_n \\
-\end{array} \right]$ é calculada por
+A Soma dos quadrados dos resíduos ($SQ_{res}$) pode ser obtida pela **norma ao quadrado** do vetor $\vec{e}$:
 
-$$\Vert\vec{e}\Vert^{2}=\vec{e}\cdot\vec{e}=e_{1}^{2}+e_{2}^{2}+\cdots+e_{n}^{2}$$
+$$SQ_{res} = \Vert\vec{e}\Vert^{2}=\vec{e}\cdot\vec{e}=e_{1}^{2}+e_{2}^{2}+\cdots+e_{n}^{2}$$
+
+</br>
 
 ::: {.callout-tip title='Representação da Solução do MMQ no GeoGebra'}
 
