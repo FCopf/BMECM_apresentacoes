@@ -6,8 +6,8 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.42">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.30">
 
   <meta name="author" content="Fabio Cop Ferreira e William Remo Pedroso Conti">
   <title>BASES DA MATEMÁTICA E ESTATÍSTICA PARA CIÊNCIAS DO MAR – Regressão Linear Simples e o Método dos Mínimos Quadrados</title>
@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-d8637a5093d2050d137f37f9b25e1079.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-6eff3e2b2895612066c43c7bcd2c26b3.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -157,7 +157,7 @@ Fabio Cop Ferreira e William Remo Pedroso Conti
 <section id="introdução-à-regressão-linear-simples" class="slide level2">
 <h2>Introdução à Regressão Linear Simples</h2>
 <p>A regressão linear simples é um método para modelar a relação entre uma variável dependente <span class="math inline">\(y\)</span> e uma variável independente <span class="math inline">\(x\)</span>. A equação da reta ajustada é dada por:</p>
-<p><span class="math display">\[ y = \beta_0 + \beta_1 x \]</span></p>
+<p><span class="math display">\[ \hat{y} = \beta_0 + \beta_1 x \]</span></p>
 <div style="font-size: .6em">
 <div class="columns">
 <div class="column" style="width:30%;">
@@ -206,11 +206,22 @@ Fabio Cop Ferreira e William Remo Pedroso Conti
 <h2>Definição dos Resíduos</h2>
 <p>Na figura abaixo, os resíduos <span class="math inline">\(e_i\)</span> representam as diferenças entre os valores observados <span class="math inline">\(y_i\)</span> e os valores ajustados <span class="math inline">\(\hat{y}_i\)</span> pela reta de regressão:</p>
 <p><span class="math display">\[ e_i = y_i - (\beta_0 + \beta_1 x_i) \]</span></p>
-<p>Portando na regressão linear, assume-se que o valor ajustado em <span class="math inline">\(y\)</span> é dado por:</p>
-<p><span class="math display">\[ \hat{y} = \beta_0 + \beta_1 x + e\]</span></p>
-<div style="font-size: .6em">
+<p>Portando na regressão linear, assume-se que o valor observado em <span class="math inline">\(y_i\)</span> é dado por:</p>
+<p><span class="math display">\[ y_i = \beta_0 + \beta_1 x_i + e_i\]</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
 <div class="columns">
-<div class="column" style="width:30%;">
+<div class="column" style="width:50%;">
+<p>Acesse o link <a href="https://www.geogebra.org/calculator/d8a9x9j3" target="_blank">Regresão linear Geogebra</a></p>
+<div style="font-size: .6em">
+<div style="text-align: center;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -247,9 +258,15 @@ Fabio Cop Ferreira e William Remo Pedroso Conti
 </tr>
 </tbody>
 </table>
-</div><div class="column" style="width:70%;">
-<p><img data-src="imagens/diagrama_regressao.png" style="background-color:#ffffff; width:500px"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="text-align: center;">
+<p><img data-src="imagens/diagrama_regressao.png" style="background-color:#ffffff; width:70%"></p>
+</div>
 </div></div>
+</div>
+</div>
 </div>
 </section>
 <section id="método-dos-mínimos-quadrados" class="slide level2">
@@ -268,6 +285,11 @@ e_n = y_n - (\beta_0 + \beta_1 x_n) \\
 </section>
 <section id="representação-vetorial-dos-resíduos" class="slide level2">
 <h2>Representação Vetorial dos Resíduos</h2>
+<p>Podemos portanto representar os resíduos como vetor em que o vetor <span class="math inline">\(\vec{e}\)</span> é igual ao vetor <span class="math inline">\(y\)</span> menos uma <strong>combinação linear</strong> dos vetores <span class="math inline">\(\vec{f}_0\)</span> e <span class="math inline">\(\vec{f}_0\)</span> com constantes <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span>.</p>
+<p><br></p>
+<p><span class="math display">\[ \vec{e} = \vec{y} - (\beta_0 \vec{f}_0 + \beta_1 \vec{f}_1) \]</span></p>
+<p><br></p>
+<div style="font-size: .7em">
 <p><span class="math display">\[
 \left[ \begin{array}{c}
 e_1 \\
@@ -308,8 +330,7 @@ x_n \\
 \end{array} \right]
 \right)
 \]</span></p>
-<hr>
-<p>Definimos os vetores:</p>
+<p>Onde:</p>
 <p><span class="math display">\[\vec{e} =
 \left[ \begin{array}{c}
 e_1 \\
@@ -338,22 +359,18 @@ x_2 \\
 \vdots \\
 x_n \\
 \end{array} \right]\]</span></p>
+</div>
 </section>
 <section id="representação-vetorial-dos-resíduos-1" class="slide level2">
 <h2>Representação Vetorial dos Resíduos</h2>
-<p>Podemos portanto representar os resíduos como vetore em que o vetor <span class="math inline">\(\vec{e}\)</span> é igual ao vetor <span class="math inline">\(y\)</span> menos uma <strong>combinação linear</strong> dos vetores <span class="math inline">\(\vec{f}_0\)</span> e <span class="math inline">\(\vec{f}_0\)</span> com constantes <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span>, onde:</p>
+<p>Podemos portanto representar os resíduos como vetor em que o vetor <span class="math inline">\(\vec{e}\)</span> é igual ao vetor <span class="math inline">\(y\)</span> menos uma <strong>combinação linear</strong> dos vetores <span class="math inline">\(\vec{f}_0\)</span> e <span class="math inline">\(\vec{f}_0\)</span> com constantes <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span>, onde:</p>
 <p><span class="math display">\[ \vec{e} = \vec{y} - (\beta_0 \vec{f}_0 + \beta_1 \vec{f}_1) \]</span></p>
 </section>
 <section id="geometria-da-solução-de-mínimos-quadrados" class="slide level2">
 <h2>Geometria da Solução de Mínimos Quadrados</h2>
-<p>A norma ao quadrado do vetor <span class="math inline">\(\vec{e} =
-\left[ \begin{array}{c}
-e_1 \\
-e_2 \\
-\vdots \\
-e_n \\
-\end{array} \right]\)</span> é calculada por</p>
-<p><span class="math display">\[\Vert\vec{e}\Vert^{2}=\vec{e}\cdot\vec{e}=e_{1}^{2}+e_{2}^{2}+\cdots+e_{n}^{2}\]</span></p>
+<p>A Soma dos quadrados dos resíduos (<span class="math inline">\(SQ_{res}\)</span>) pode ser obtida pela <strong>norma ao quadrado</strong> do vetor <span class="math inline">\(\vec{e}\)</span>:</p>
+<p><span class="math display">\[SQ_{res} = \Vert\vec{e}\Vert^{2}=\vec{e}\cdot\vec{e}=e_{1}^{2}+e_{2}^{2}+\cdots+e_{n}^{2}\]</span></p>
+<p><br></p>
 <div title="Representação da Solução do MMQ no GeoGebra">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -664,190 +681,172 @@ B = \left[ \begin{array}{c}
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
-          }
-        }
-        return false;
-      }
-      const onCopySuccess = function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
             }
           }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
-      });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/FCopf\.github\.io\/BMECM_apresentacoes\/");
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          return false;
         }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
             }
-          }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
         }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
               }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/FCopf\.github\.io\/BMECM_apresentacoes\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>
