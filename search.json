@@ -140,13 +140,6 @@
     "text": "Representação Vetorial dos Resíduos\nPodemos portanto representar os resíduos como vetor em que o vetor \\(\\vec{e}\\) é igual ao vetor \\(y\\) menos uma combinação linear dos vetores \\(\\vec{f}_0\\) e \\(\\vec{f}_0\\) com constantes \\(\\beta_0\\) e \\(\\beta_1\\).\n\n\\[ \\vec{e} = \\vec{y} - (\\beta_0 \\vec{f}_0 + \\beta_1 \\vec{f}_1) \\]\n\n\n\\[\n\\left[ \\begin{array}{c}\ne_1 \\\\\ne_2 \\\\\n\\vdots \\\\\ne_n \\\\\n\\end{array} \\right]\n=\n\\left[ \\begin{array}{c}\ny_1 - (\\beta_0 + \\beta_1 x_1) \\\\\ny_2 - (\\beta_0 + \\beta_1 x_2) \\\\\n\\vdots \\\\\ny_n - (\\beta_0 + \\beta_1 x_n) \\\\\n\\end{array} \\right]\n=\n\\left[ \\begin{array}{c}\ny_1 \\\\\ny_2 \\\\\n\\vdots \\\\\ny_n\n\\end{array} \\right]\n-\n\\left(\n\\beta_0\n\\left[ \\begin{array}{c}\n1 \\\\\n1 \\\\\n\\vdots \\\\\n1 \\\\\n\\end{array} \\right]\n+\n\\beta_1\n\\left[ \\begin{array}{c}\nx_1 \\\\\nx_2 \\\\\n\\vdots \\\\\nx_n \\\\\n\\end{array} \\right]\n\\right)\n\\]\nOnde:\n\\[\\vec{e} =\n\\left[ \\begin{array}{c}\ne_1 \\\\\ne_2 \\\\\n\\vdots \\\\\ne_n \\\\\n\\end{array} \\right];\n\\vec{y} =\n\\left[ \\begin{array}{c}\ny_1 \\\\\ny_2 \\\\\n\\vdots \\\\\ny_n \\\\\n\\end{array} \\right];\n\\vec{f}_0 =\n\\left[ \\begin{array}{c}\n1 \\\\\n1 \\\\\n\\vdots \\\\\n1 \\\\\n\\end{array} \\right];\n\\vec{f}_1 =\n\\left[ \\begin{array}{c}\nx_1 \\\\\nx_2 \\\\\n\\vdots \\\\\nx_n \\\\\n\\end{array} \\right]\\]"
   },
   {
-    "objectID": "mmq.html#representação-vetorial-dos-resíduos-1",
-    "href": "mmq.html#representação-vetorial-dos-resíduos-1",
-    "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
-    "section": "Representação Vetorial dos Resíduos",
-    "text": "Representação Vetorial dos Resíduos\nPodemos portanto representar os resíduos como vetor em que o vetor \\(\\vec{e}\\) é igual ao vetor \\(y\\) menos uma combinação linear dos vetores \\(\\vec{f}_0\\) e \\(\\vec{f}_0\\) com constantes \\(\\beta_0\\) e \\(\\beta_1\\), onde:\n\\[ \\vec{e} = \\vec{y} - (\\beta_0 \\vec{f}_0 + \\beta_1 \\vec{f}_1) \\]"
-  },
-  {
     "objectID": "mmq.html#geometria-da-solução-de-mínimos-quadrados",
     "href": "mmq.html#geometria-da-solução-de-mínimos-quadrados",
     "title": "Regressão Linear Simples e o Método dos Mínimos Quadrados",
