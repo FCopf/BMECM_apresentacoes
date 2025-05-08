@@ -209,12 +209,6 @@ x_n \\
 
 :::
 
-## Representação Vetorial dos Resíduos
-
-Podemos portanto representar os resíduos como vetor em que o vetor $\vec{e}$ é igual ao vetor $y$ menos uma **combinação linear** dos vetores $\vec{f}_0$ e $\vec{f}_0$ com constantes $\beta_0$ e $\beta_1$, onde:
-
-$$ \vec{e} = \vec{y} - (\beta_0 \vec{f}_0 + \beta_1 \vec{f}_1) $$
-
 ## Geometria da Solução de Mínimos Quadrados
 
 A Soma dos quadrados dos resíduos ($SQ_{res}$) pode ser obtida pela **norma ao quadrado** do vetor $\vec{e}$:
